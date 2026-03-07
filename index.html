@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kelompok 3 SOSBUD — Project Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #0d0f14;
+      --surface:  #141720;
+      --border:   #222636;
+      --accent:   #f0c040;
+      --accent2:  #4fd1a5;
+      --muted:    #5a607a;
+      --text:     #e4e8f5;
+      --text-dim: #8890aa;
+      --danger:   #ff6b6b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Noise overlay ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: .35;
+    }
+
+    /* ── Layout ── */
+    .app { display: flex; min-height: 100vh; position: relative; z-index: 1; }
+
+    /* ── Sidebar ── */
+    aside {
+      width: 260px; flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      position: sticky; top: 0; height: 100vh;
+      padding: 32px 24px;
+      gap: 0;
+    }
+
+    .brand {
+      margin-bottom: 36px;
+    }
+    .brand-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: .15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .brand-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+    }
+    .brand-title span { color: var(--accent); }
+
+    .nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+
+    .nav-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background .18s, color .18s;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dim);
+      user-select: none;
+      position: relative;
+    }
+    .nav-item:hover { background: rgba(255,255,255,.04); color: var(--text); }
+    .nav-item.active {
+      background: rgba(240,192,64,.08);
+      border-color: rgba(240,192,64,.2);
+      color: var(--accent);
+    }
+    .nav-item .icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+    .nav-item.active .icon { background: rgba(240,192,64,.15); }
+
+    .nav-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      background: var(--border);
+      color: var(--muted);
+      padding: 2px 6px;
+      border-radius: 99px;
+      margin-left: auto;
+    }
+    .nav-item.active .nav-num { background: rgba(240,192,64,.2); color: var(--accent); }
+
+    .sidebar-footer {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      line-height: 1.8;
+    }
+    .sidebar-footer strong { color: var(--accent2); }
+
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      padding: 40px 48px;
+      max-width: 900px;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      margin-bottom: 36px;
+      animation: fadeUp .4s ease both;
+    }
+    .page-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .page-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text);
+    }
+    .page-desc {
+      color: var(--text-dim);
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    /* ── Tab panel ── */
+    .panel { display: none; animation: fadeUp .3s ease both; }
+    .panel.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Section blocks ── */
+    .section {
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+      transition: border-color .2s;
+    }
+    .card:hover { border-color: #2e344d; }
+
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .card-sub {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 12px;
+    }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+      padding: 3px 9px;
+      border-radius: 99px;
+      border: 1px solid;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+    .badge-yellow  { color: var(--accent);  border-color: rgba(240,192,64,.3);  background: rgba(240,192,64,.06); }
+    .badge-green   { color: var(--accent2); border-color: rgba(79,209,165,.3);  background: rgba(79,209,165,.06); }
+    .badge-red     { color: var(--danger);  border-color: rgba(255,107,107,.3); background: rgba(255,107,107,.06); }
+    .badge-muted   { color: var(--muted);   border-color: var(--border);        background: transparent; }
+
+    /* ── Task grid ── */
+    .task-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 700px) { .task-grid { grid-template-columns: 1fr; } }
+
+    .task-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      transition: border-color .2s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .task-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity .2s;
+      border-radius: 0;
+    }
+    .task-card:hover { border-color: #2e344d; transform: translateY(-2px); }
+    .task-card:hover::before { opacity: 1; }
+
+    .task-card.special::before { background: var(--danger); opacity: 1; }
+    .task-card.leader::before  { background: var(--accent2); opacity: 1; }
+
+    .task-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .task-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .task-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 4px 0 8px;
+    }
+    .task-items { list-style: none; }
+    .task-items li {
+      font-size: 13px;
+      color: var(--text-dim);
+      padding: 4px 0;
+      padding-left: 16px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,.03);
+    }
+    .task-items li:last-child { border-bottom: none; }
+    .task-items li::before {
+      content: '›';
+      position: absolute; left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .task-note {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: rgba(255,107,107,.05);
+      border: 1px solid rgba(255,107,107,.15);
+      border-radius: 8px;
+      font-size: 12px;
+      color: #ff9f9f;
+      line-height: 1.5;
+    }
+    .task-note.green {
+      background: rgba(79,209,165,.05);
+      border-color: rgba(79,209,165,.15);
+      color: #7de8c8;
+    }
+
+    /* ── Koordinasi flow ── */
+    .flow {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .flow-step {
+      background: var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dim);
+    }
+    .flow-arrow {
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* ── Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    th {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.03);
+      color: var(--text-dim);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,.015); color: var(--text); }
+    td:first-child { color: var(--text); font-weight: 500; }
+
+    .table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    /* ── Checklist ── */
+    .checklist { list-style: none; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.03);
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-box {
+      width: 18px; height: 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .check-box.checked {
+      background: var(--accent2);
+      border-color: var(--accent2);
+    }
+    .check-box.checked::after {
+      content: '✓';
+      color: #0d0f14;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .checklist li.done .check-text {
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+
+    /* ── Outline tree ── */
+    .outline { list-style: none; }
+    .outline > li {
+      margin-bottom: 6px;
+    }
+    .outline-bab {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      padding: 12px 16px;
+      background: var(--border);
+      border-radius: 9px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      user-select: none;
+      transition: background .2s;
+    }
+    .outline-bab:hover { background: #2a2f42; }
+    .outline-bab .toggle { color: var(--accent); font-size: 18px; transition: transform .2s; }
+    .outline-bab.open .toggle { transform: rotate(90deg); }
+
+    .outline-children {
+      display: none;
+      padding: 8px 0 4px 16px;
+    }
+    .outline-children.open { display: block; }
+
+    .outline-sub {
+      list-style: none;
+      margin-bottom: 4px;
+    }
+    .outline-sub > li {
+      padding: 7px 12px;
+      border-left: 2px solid var(--border);
+      margin-left: 6px;
+      font-size: 13px;
+      color: var(--text-dim);
+      transition: border-color .15s, color .15s;
+      cursor: default;
+    }
+    .outline-sub > li:hover { border-color: var(--accent); color: var(--text); }
+
+    .outline-sub2 {
+      list-style: none;
+      padding-left: 16px;
+      margin-top: 4px;
+    }
+    .outline-sub2 li {
+      font-size: 12.5px;
+      color: var(--muted);
+      padding: 4px 0;
+      padding-left: 12px;
+      border-left: 2px solid var(--border);
+      margin-bottom: 2px;
+      transition: color .15s;
+    }
+    .outline-sub2 li:hover { color: var(--accent2); }
+
+    /* ── Warning alert ── */
+    .alert {
+      display: flex; gap: 14px;
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .alert-danger {
+      background: rgba(255,107,107,.07);
+      border: 1px solid rgba(255,107,107,.2);
+      color: #ffaaaa;
+    }
+    .alert-info {
+      background: rgba(79,209,165,.07);
+      border: 1px solid rgba(79,209,165,.2);
+      color: #8ff0d4;
+    }
+    .alert-icon { font-size: 20px; flex-shrink: 0; }
+
+    /* ── Top progress bar ── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width .3s ease;
+      z-index: 999;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      aside { width: 220px; padding: 24px 16px; }
+      main  { padding: 28px 24px; }
+    }
+    @media (max-width: 600px) {
+      .app { flex-direction: column; }
+      aside { width: 100%; height: auto; position: static; flex-direction: row; flex-wrap: wrap; padding: 16px; }
+      main  { padding: 20px 16px; }
+      .nav  { flex-direction: row; }
+      .brand { margin-bottom: 12px; width: 100%; }
+      .sidebar-footer { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-bar" style="width:0%"></div>
+
+<div class="app">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <div class="brand">
+      <div class="brand-label">Mata Kuliah · Sosbud</div>
+      <div class="brand-title">Kelompok <span>3</span><br>Project Hub</div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-item active" data-tab="tugas" onclick="switchTab('tugas', this)">
+        <div class="icon">📋</div>
+        Pembagian Tugas
+        <span class="nav-num">5</span>
+      </div>
+      <div class="nav-item" data-tab="panduan" onclick="switchTab('panduan', this)">
+        <div class="icon">📐</div>
+        Panduan Penulisan
+        <span class="nav-num">7</span>
+      </div>
+      <div class="nav-item" data-tab="kerangka" onclick="switchTab('kerangka', this)">
+        <div class="icon">🗂️</div>
+        Kerangka Makalah
+        <span class="nav-num">3</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <strong>Judul Makalah</strong><br>
+      Peran Etika & Norma dalam<br>
+      Meredam Pertentangan Sosial<br>
+      sebagai Upaya Integrasi<br>
+      Masyarakat
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <!-- ════ PANEL 1: PEMBAGIAN TUGAS ════ -->
+    <div class="panel active" id="tab-tugas">
+      <div class="page-header">
+        <div class="page-tag">// panel 01 · pembagian tugas</div>
+        <h1 class="page-title">Siapa ngerjain apa?</h1>
+        <p class="page-desc">Distribusi tanggung jawab dan alur koordinasi antar anggota kelompok.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Koordinator</div>
+        <div class="card leader" style="border-left: 3px solid var(--accent2);">
+          <div class="task-header">
+            <div>
+              <div class="task-role">Ketua Kelompok</div>
+              <div class="task-name">🏛️ Quality Control & Koordinasi</div>
+            </div>
+            <span class="badge badge-green">Leads</span>
+          </div>
+          <ul class="task-items">
+            <li>Koordinasi keseluruhan alur kerja</li>
+            <li>Review dan quality check semua bagian sebelum dikumpulkan</li>
+            <li>Pastikan konsistensi argumen antar bagian</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Anggota</div>
+        <div class="task-grid">
+
+          <div class="task-card">
+            <div class="task-header">
+              <div>
+                <div class="task-role">Anggota 1</div>
+                <div class="task-name">✍️ Pembuka</div>
+              </div>
+              <span class="badge badge-muted">BAB I</span>
+            </div>
+            <ul class="task-items">
+              <li>Kata Pengantar</li>
+              <li>1.1 Latar Belakang</li>
+              <li>1.2 Rumusan Masalah</li>
+              <li>1.3 Tujuan Penulisan</li>
+              <li>1.4 Manfaat Penulisan</li>
+            </ul>
+            <div class="task-note green">Sertakan data/fakta nyata tentang pertentangan sosial di Indonesia sebagai hook.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <div>
+                <div class="task-role">Anggota 2</div>
+                <div class="task-name">📚 Definisi & Konsep</div>
+              </div>
+              <span class="badge badge-muted">BAB II · 2.1</span>
+            </div>
+            <ul class="task-items">
+              <li>2.1.1 Etika</li>
+              <li>2.1.2 Moral & Akhlak sebagai Dimensi Etika</li>
+              <li>2.1.3 Norma</li>
+            </ul>
+            <div class="task-note green">Fondasi seluruh makalah. Semua definisi wajib pakai referensi akademik. Koordinasi dengan Anggota 4.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-header">
+              <div>
+                <div class="task-role">Anggota 3</div>
+                <div class="task-name">⚡ Pertentangan Sosial</div>
+              </div>
+              <span class="badge badge-muted">BAB II · 2.2</span>
+            </div>
+            <ul class="task-items">
+              <li>2.2.1 Definisi Pertentangan Sosial</li>
+              <li>2.2.2 Faktor Penyebab</li>
+              <li>2.2.3 Dampak Pertentangan Sosial</li>
+            </ul>
+            <div class="task-note green">Bedakan dengan jelas: konflik, disintegrasi, dan diskriminasi. Koordinasi dengan Anggota 4.</div>
+          </div>
+
+          <div class="task-card special">
+            <div class="task-header">
+              <div>
+                <div class="task-role">Anggota 4 — ⚠️ Kritis</div>
+                <div class="task-name">🔗 Solusi & Kasus Nyata</div>
+              </div>
+              <span class="badge badge-red">BAB II · 2.3</span>
+            </div>
+            <ul class="task-items">
+              <li>2.3.1 Mekanisme Kerja Etika & Norma</li>
+              <li>2.3.2 Kontribusi terhadap Integrasi</li>
+              <li>2.3.3 Contoh Kasus Nyata</li>
+            </ul>
+            <div class="task-note">Posisi paling kritis — harus baca output Anggota 2 & 3 dulu. Pilih kasus nyata di Indonesia dengan sumber yang bisa dipertanggungjawabkan.</div>
+          </div>
+
+          <div class="task-card" style="grid-column: 1 / -1;">
+            <div class="task-header">
+              <div>
+                <div class="task-role">Anggota 5</div>
+                <div class="task-name">🏁 Penutup & Referensi</div>
+              </div>
+              <span class="badge badge-muted">BAB III + Daftar Pustaka</span>
+            </div>
+            <ul class="task-items">
+              <li>3.1 Kesimpulan (jawab langsung 3 rumusan masalah dari BAB I)</li>
+              <li>3.2 Saran (realistis & konkret)</li>
+              <li>Daftar Pustaka — kumpulkan dari semua anggota, format APA</li>
+            </ul>
+            <div class="task-note green">Baca semua bagian sebelum nulis kesimpulan. Saran harus konkret, bukan utopis.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Alur Koordinasi</div>
+        <div class="flow">
+          <div class="flow-step">Anggota 1<br><small style="color:var(--muted)">Pendahuluan</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">Anggota 2<br><small style="color:var(--muted)">Konsep</small></div>
+          <div class="flow-arrow">+</div>
+          <div class="flow-step">Anggota 3<br><small style="color:var(--muted)">Masalah</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">Anggota 4<br><small style="color:var(--muted)">Sintesis</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">Anggota 5<br><small style="color:var(--muted)">Penutup</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background: rgba(79,209,165,.1); color: var(--accent2);">Ketua<br><small>Review Final</small></div>
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <div class="alert-icon">💡</div>
+        <div><strong>Reminder:</strong> Semua anggota wajib memahami keseluruhan isi makalah, bukan hanya bagian masing-masing. Persiapan tanya jawab kritis = wajib.</div>
+      </div>
+    </div>
+
+
+    <!-- ════ PANEL 2: PANDUAN PENULISAN ════ -->
+    <div class="panel" id="tab-panduan">
+      <div class="page-header">
+        <div class="page-tag">// panel 02 · panduan penulisan</div>
+        <h1 class="page-title">Aturan mainnya apa?</h1>
+        <p class="page-desc">Format, ketentuan referensi, tools, dan checklist final sebelum dikumpulkan.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Format Dasar</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Elemen</th><th>Ketentuan</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Kertas</td><td>HVS Kuarto (A4)</td></tr>
+              <tr><td>Font</td><td>Times New Roman</td></tr>
+              <tr><td>Ukuran Font</td><td>12</td></tr>
+              <tr><td>Spasi</td><td>2 (double spacing) di seluruh dokumen</td></tr>
+              <tr><td>Daftar Pustaka</td><td>APA Style</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Struktur Dokumen</div>
+        <div class="card">
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span class="badge badge-muted">1. Cover</span>
+            <span style="color:var(--muted)">→</span>
+            <span class="badge badge-muted">2. Kata Pengantar</span>
+            <span style="color:var(--muted)">→</span>
+            <span class="badge badge-muted">3. Daftar Isi</span>
+            <span style="color:var(--muted)">→</span>
+            <span class="badge badge-yellow">4. BAB I</span>
+            <span style="color:var(--muted)">→</span>
+            <span class="badge badge-yellow">5. BAB II</span>
+            <span style="color:var(--muted)">→</span>
+            <span class="badge badge-yellow">6. BAB III</span>
+            <span style="color:var(--muted)">→</span>
+            <span class="badge badge-green">7. Daftar Pustaka</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Ketentuan Referensi</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Sumber</th><th>Status</th><th>Keterangan</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jurnal Akademik</td>
+                <td><span class="badge badge-green">✅ Utama</span></td>
+                <td>Diutamakan — bobot tertinggi</td>
+              </tr>
+              <tr>
+                <td>Buku Teks / Ilmiah</td>
+                <td><span class="badge badge-green">✅ Utama</span></td>
+                <td>Bisa dijadikan referensi utama</td>
+              </tr>
+              <tr>
+                <td>Blog / Wikipedia</td>
+                <td><span class="badge badge-red">⚠️ Bahan awal</span></td>
+                <td>Boleh untuk riset awal, tapi jangan jadi sumber utama</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Ketentuan Konten</div>
+        <div class="card">
+          <ul class="task-items">
+            <li>Setiap klaim/pernyataan <strong>wajib</strong> disertai referensi akademik</li>
+            <li>Sertakan minimal <strong>1 contoh kasus nyata</strong> yang relevan dan bisa dipertanggungjawabkan</li>
+            <li>Analisis tidak boleh dangkal — harus ada penjelasan <strong>"mengapa"</strong> dan <strong>"dampaknya"</strong></li>
+            <li>Struktur argumen harus logis dan tidak ada celah antar bagian</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Tools Kolaborasi</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Kebutuhan</th><th>Tools</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Menulis makalah bersama</td><td><span class="badge badge-green">Google Docs</span></td></tr>
+              <tr><td>Presentasi</td><td><span class="badge badge-yellow">Google Slides</span></td></tr>
+              <tr><td>Menyimpan semua file</td><td><span class="badge badge-muted">Google Drive</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Checklist Final — Klik untuk centang</div>
+        <div class="card">
+          <ul class="checklist" id="checklist">
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Font Times New Roman ukuran 12</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Spasi 2 di seluruh dokumen</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Kertas Kuarto (A4)</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Semua klaim ada referensi akademiknya</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Ada minimal 1 contoh kasus nyata</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Daftar pustaka format APA</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Sumber utama dari jurnal/buku akademik (bukan blog/Wikipedia)</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Struktur lengkap (Cover → Daftar Pustaka)</span></li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div><span class="check-text">Semua anggota sudah review keseluruhan isi</span></li>
+          </ul>
+          <div id="check-progress" style="margin-top:14px; font-family:'Space Mono',monospace; font-size:11px; color:var(--muted);">
+            0 / 9 selesai
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ════ PANEL 3: KERANGKA MAKALAH ════ -->
+    <div class="panel" id="tab-kerangka">
+      <div class="page-header">
+        <div class="page-tag">// panel 03 · kerangka makalah</div>
+        <h1 class="page-title">Struktur isinya?</h1>
+        <p class="page-desc">Outline lengkap makalah — klik tiap BAB untuk expand/collapse.</p>
+      </div>
+
+      <div class="alert alert-info" style="margin-bottom:20px;">
+        <div class="alert-icon">📌</div>
+        <div><strong>Judul:</strong> Peran Etika dan Norma dalam Meredam Pertentangan Sosial sebagai Upaya Integrasi Masyarakat</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Bagian Pembuka</div>
+        <div class="card" style="font-size:13.5px; color:var(--text-dim);">
+          <div style="margin-bottom:8px;"><span class="badge badge-muted">1</span> <strong style="color:var(--text)">Cover</strong></div>
+          <div style="margin-bottom:8px;"><span class="badge badge-muted">2</span> <strong style="color:var(--text)">Kata Pengantar</strong> — syukur, latar, terima kasih, harapan manfaat</div>
+          <div><span class="badge badge-muted">3</span> <strong style="color:var(--text)">Daftar Isi</strong></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Isi Utama — Klik untuk expand</div>
+        <ul class="outline">
+
+          <li>
+            <div class="outline-bab open" onclick="toggleOutline(this)">
+              <span>BAB I — Pendahuluan</span>
+              <span class="toggle">›</span>
+            </div>
+            <div class="outline-children open">
+              <ul class="outline-sub">
+                <li>
+                  <strong>1.1 Latar Belakang</strong>
+                  <ul class="outline-sub2">
+                    <li>Fenomena pertentangan sosial di Indonesia (data/fakta nyata)</li>
+                    <li>Relevansi norma & etika sebagai solusi</li>
+                    <li>Urgensi pembahasan topik</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>1.2 Rumusan Masalah</strong>
+                  <ul class="outline-sub2">
+                    <li>Apa itu etika, moral, akhlak, dan norma?</li>
+                    <li>Bentuk dan faktor penyebab pertentangan sosial?</li>
+                    <li>Bagaimana peran etika & norma dalam integrasi masyarakat?</li>
+                  </ul>
+                </li>
+                <li><strong>1.3 Tujuan Penulisan</strong></li>
+                <li><strong>1.4 Manfaat Penulisan</strong> — teoritis & praktis</li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <div class="outline-bab" onclick="toggleOutline(this)">
+              <span>BAB II — Pembahasan</span>
+              <span class="toggle">›</span>
+            </div>
+            <div class="outline-children">
+              <ul class="outline-sub">
+                <li>
+                  <strong>2.1 Konsep Etika, Moral, Akhlak, dan Norma</strong>
+                  <ul class="outline-sub2">
+                    <li>2.1.1 Etika — definisi, nilai internal, sumber norma</li>
+                    <li>2.1.2 Moral & Akhlak sebagai Dimensi Etika</li>
+                    <li>2.1.3 Norma — jenis-jenis, fungsi kontrol sosial</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>2.2 Pertentangan Sosial</strong>
+                  <ul class="outline-sub2">
+                    <li>2.2.1 Definisi — bedakan konflik, disintegrasi, diskriminasi</li>
+                    <li>2.2.2 Faktor Penyebab — kepentingan, SARA, kesenjangan, lemahnya etika</li>
+                    <li>2.2.3 Dampak — kohesi sosial, stabilitas, pembangunan</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>2.3 Peran Etika & Norma dalam Meredam Pertentangan</strong>
+                  <ul class="outline-sub2">
+                    <li>2.3.1 Mekanisme kerja — rem sosial sebelum konflik eskalasi</li>
+                    <li>2.3.2 Kontribusi terhadap Integrasi Masyarakat</li>
+                    <li>2.3.3 Contoh Kasus Nyata di Indonesia ⚠️ butuh sumber kuat</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <div class="outline-bab" onclick="toggleOutline(this)">
+              <span>BAB III — Penutup</span>
+              <span class="toggle">›</span>
+            </div>
+            <div class="outline-children">
+              <ul class="outline-sub">
+                <li>
+                  <strong>3.1 Kesimpulan</strong>
+                  <ul class="outline-sub2">
+                    <li>Jawab langsung 3 rumusan masalah dari BAB I</li>
+                    <li>Tegaskan rantai kausal: etika → norma → meredam pertentangan → integrasi</li>
+                    <li>Singkat, padat, tidak bertele-tele</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>3.2 Saran</strong>
+                  <ul class="outline-sub2">
+                    <li>Realistis dan konkret (hindari yang terlalu utopis)</li>
+                    <li>Contoh: pendidikan karakter, penguatan nilai etika di institusi sosial</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Daftar Pustaka</div>
+        <div class="card">
+          <ul class="task-items">
+            <li>Minimal dari <strong>jurnal akademik</strong> + buku teks</li>
+            <li>Hindari blog, Wikipedia, atau sumber tidak terverifikasi</li>
+            <li>Format penulisan: <span class="badge badge-yellow">APA Style</span></li>
+            <li>Dikumpulkan dari semua anggota oleh Anggota 5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="alert alert-danger">
+        <div class="alert-icon">⚠️</div>
+        <div><strong>Reminder:</strong> Semua klaim harus disertai referensi akademik dan kasus nyata yang bisa dipertahankan. Analisis harus punya layer "mengapa" dan "dampaknya".</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // Tab switching
+  function switchTab(id, el) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    el.classList.add('active');
+    animateProgress();
+  }
+
+  // Outline toggle
+  function toggleOutline(el) {
+    el.classList.toggle('open');
+    const children = el.nextElementSibling;
+    children.classList.toggle('open');
+  }
+
+  // Checklist
+  function toggleCheck(box) {
+    box.classList.toggle('checked');
+    const li = box.closest('li');
+    li.classList.toggle('done');
+    updateCheckProgress();
+  }
+
+  function updateCheckProgress() {
+    const total = document.querySelectorAll('#checklist li').length;
+    const done  = document.querySelectorAll('#checklist .check-box.checked').length;
+    const el    = document.getElementById('check-progress');
+    el.textContent = done + ' / ' + total + ' selesai';
+    if (done === total) {
+      el.style.color = 'var(--accent2)';
+      el.textContent = '✓ Semua checklist selesai — siap dikumpulkan!';
+    } else {
+      el.style.color = 'var(--muted)';
+    }
+  }
+
+  // Fake progress bar animation on tab switch
+  function animateProgress() {
+    const bar = document.getElementById('progress-bar');
+    bar.style.width = '0%';
+    bar.style.opacity = '1';
+    setTimeout(() => bar.style.width = '70%', 50);
+    setTimeout(() => bar.style.width = '100%', 250);
+    setTimeout(() => { bar.style.opacity = '0'; bar.style.width = '0%'; }, 550);
+  }
+</script>
+</body>
+</html>
