@@ -154,6 +154,64 @@ aside {
   color: var(--accent);
 }
 
+/* ── Sidebar tools shortcut ── */
+.sidebar-tools {
+  margin-top: 20px;
+  padding-top: 16px;
+  padding-bottom: 10px;
+  border-top: 1px solid var(--border);
+}
+.sidebar-tools-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.sidebar-tool-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  margin-bottom: 2px;
+}
+.sidebar-tool-item:hover {
+  background: var(--border);
+  color: var(--text);
+}
+.sidebar-tool-item svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+.sidebar-tool-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.sidebar-tool-name {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  line-height: 1.2;
+}
+.sidebar-tool-item:hover .sidebar-tool-name {
+  color: var(--text);
+}
+.sidebar-tool-desc {
+  font-size: 0.6rem;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
 .sidebar-footer {
   font-family: "Inter", sans-serif;
   font-size: 0.667rem;
@@ -301,6 +359,95 @@ main {
   color: var(--muted);
   border-color: var(--border);
   background: transparent;
+}
+.badge-blue {
+  color: #60a5fa;
+  border-color: rgba(96, 165, 250, 0.3);
+  background: rgba(96, 165, 250, 0.06);
+}
+.badge-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+  display: inline-block;
+}
+.badge-link:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* ── Collab card grid ── */
+.collab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.collab-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-decoration: none;
+  color: var(--text);
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    background 0.2s;
+  position: relative;
+}
+.collab-card:hover {
+  transform: translateY(-3px);
+  background: #1a1e2d;
+}
+.collab-card--word:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+}
+.collab-card--slides:hover {
+  border-color: rgba(244, 168, 37, 0.5);
+}
+.collab-card--drive:hover {
+  border-color: rgba(0, 172, 71, 0.5);
+}
+.collab-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+}
+.collab-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.collab-info {
+  flex: 1;
+  min-width: 0;
+}
+.collab-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.collab-desc {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+.collab-arrow {
+  font-size: 0.85rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.collab-card:hover .collab-arrow {
+  color: var(--text-dim);
+}
+@media (max-width: 600px) {
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── Task grid ── */
