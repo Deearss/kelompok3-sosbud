@@ -308,29 +308,62 @@
       color: #7de8c8;
     }
 
-    /* ── Koordinasi flow ── */
-    .flow {
+    /* ── Koordinasi grid ── */
+    .coord-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .coord-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 24px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
+      padding: 18px 16px;
+      transition: border-color .2s;
     }
-    .flow-step {
-      background: var(--border);
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-family: 'Inter', sans-serif;
-      color: var(--text-dim);
+    .coord-card:hover { border-color: #2e344d; }
+    .coord-card.final {
+      border-color: rgba(79,209,165,.25);
+      background: rgba(79,209,165,.04);
     }
-    .flow-arrow {
+    .coord-card.critical {
+      border-color: rgba(255,107,107,.25);
+      background: rgba(255,107,107,.04);
+    }
+
+    .coord-step {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
       color: var(--accent);
-      font-size: 18px;
-      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .coord-card.final .coord-step { color: var(--accent2); }
+    .coord-card.critical .coord-step { color: var(--danger); }
+
+    .coord-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .coord-role {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 10px;
+    }
+
+    .coord-desc {
+      font-size: 12.5px;
+      color: var(--text-dim);
+      line-height: 1.65;
     }
 
     /* ── Table ── */
@@ -706,20 +739,57 @@
 
       <div class="section">
         <div class="section-title">Alur Koordinasi</div>
-        <div class="flow">
-          <div class="flow-step">Haidir<br><small style="color:var(--muted)">BAB I</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">Azkaa<br><small style="color:var(--muted)">Konsep</small></div>
-          <div class="flow-arrow">+</div>
-          <div class="flow-step">Reno<br><small style="color:var(--muted)">Masalah</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">Azkiya<br><small style="color:var(--muted)">Sintesis</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step">Rezaa<br><small style="color:var(--muted)">Penutup</small></div>
-          <div class="flow-arrow">+</div>
-          <div class="flow-step">Imam<br><small style="color:var(--muted)">Kata Pengantar</small></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-step" style="background: rgba(79,209,165,.1); color: var(--accent2);">Haidir<br><small>Review Final</small></div>
+        <div class="coord-grid">
+
+          <div class="coord-card">
+            <div class="coord-step">01 · Mulai</div>
+            <div class="coord-name">Haidir</div>
+            <div class="coord-role">Ketua · BAB I</div>
+            <div class="coord-desc">Tulis Rumusan Masalah lebih awal — ini kontrak seluruh makalah. Anggota lain tidak bisa mulai tanpa fondasi ini.</div>
+          </div>
+
+          <div class="coord-card">
+            <div class="coord-step">02 · Paralel</div>
+            <div class="coord-name">Azkaa</div>
+            <div class="coord-role">BAB II · 2.1</div>
+            <div class="coord-desc">Bangun fondasi konsep: etika, moral, akhlak, dan norma. Semua definisi wajib bersumber dari jurnal atau buku akademik.</div>
+          </div>
+
+          <div class="coord-card">
+            <div class="coord-step">02 · Paralel</div>
+            <div class="coord-name">Reno</div>
+            <div class="coord-role">BAB II · 2.2</div>
+            <div class="coord-desc">Bedah pertentangan sosial: definisi, faktor penyebab, dan dampaknya. Ini "problem" yang akan dijawab oleh Azkiya.</div>
+          </div>
+
+          <div class="coord-card critical">
+            <div class="coord-step">03 · Kritis</div>
+            <div class="coord-name">Azkiya</div>
+            <div class="coord-role">BAB II · 2.3</div>
+            <div class="coord-desc">Sintesis output Azkaa & Reno menjadi solusi konkret. Wajib baca 2.1 dan 2.2 dulu. Sertakan kasus nyata Indonesia yang bisa dipertahankan.</div>
+          </div>
+
+          <div class="coord-card">
+            <div class="coord-step">04 · Paralel</div>
+            <div class="coord-name">Rezaa</div>
+            <div class="coord-role">BAB III · Penutup</div>
+            <div class="coord-desc">Baca semua bagian terlebih dahulu. Kesimpulan harus menjawab langsung 3 rumusan masalah dari BAB I — tidak boleh melenceng.</div>
+          </div>
+
+          <div class="coord-card">
+            <div class="coord-step">04 · Paralel</div>
+            <div class="coord-name">Imam</div>
+            <div class="coord-role">Kata Pengantar</div>
+            <div class="coord-desc">Tulis setelah isi makalah selesai agar konteks yang disampaikan akurat. Sertakan ucapan syukur, latar belakang singkat, dan harapan manfaat.</div>
+          </div>
+
+          <div class="coord-card final">
+            <div class="coord-step">05 · Final</div>
+            <div class="coord-name">Haidir</div>
+            <div class="coord-role">Review & Rapiin</div>
+            <div class="coord-desc">Cek konsistensi argumen antar bagian, rapikan Daftar Isi, dan pastikan seluruh makalah siap dikumpulkan.</div>
+          </div>
+
         </div>
       </div>
 
