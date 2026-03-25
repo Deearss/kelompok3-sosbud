@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
+import { Tooltip } from "@/components/ui/Tooltip";
 
 const FORMAT_RULES = [
   { label: "Kertas", value: "HVS Kuarto (A4)" },
@@ -200,12 +201,13 @@ export default function PanduanPenulisanPanel() {
       <Section>
         <SectionTitle>Tools Kolaborasi</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <a
-            href="https://1drv.ms/w/c/23d53d2ba9c333ff/IQDbmR8lRCKaTaGiNEWfjXwMAZ_8kzGE0AhTazhxS8VlT2I?e=X91e5p"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-blue-400/50 group"
-          >
+          <Tooltip content="Buka dokumen makalah Word Online" position="top">
+            <a
+              href="https://1drv.ms/w/c/23d53d2ba9c333ff/IQDbmR8lRCKaTaGiNEWfjXwMAZ_8kzGE0AhTazhxS8VlT2I?e=X91e5p"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-blue-400/50 group"
+            >
             <div className="w-11 h-11 shrink-0">
               <svg
                 viewBox="0 0 48 48"
@@ -237,13 +239,15 @@ export default function PanduanPenulisanPanel() {
             </div>
             <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
           </a>
+          </Tooltip>
 
-          <a
-            href="https://docs.google.com/presentation/d/1jCadIssP0vsUnT3XPwmgVdO8mV8sYSpIQYCUo5nQQ4g/edit?usp=sharing"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#f4a825]/50 group"
-          >
+          <Tooltip content="Buka presentasi di Google Slides" position="top">
+            <a
+              href="https://docs.google.com/presentation/d/1jCadIssP0vsUnT3XPwmgVdO8mV8sYSpIQYCUo5nQQ4g/edit?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#f4a825]/50 group"
+            >
             <div className="w-11 h-11 shrink-0">
               <svg
                 viewBox="0 0 48 48"
@@ -302,13 +306,15 @@ export default function PanduanPenulisanPanel() {
             </div>
             <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
           </a>
+          </Tooltip>
 
-          <a
-            href="https://drive.google.com/drive/u/1/folders/1bw-PLHiOR_fS-qzUczeqxmtR_4-vMiC9"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00ac47]/50 group"
-          >
+          <Tooltip content="Buka folder berkas kelompok di Google Drive" position="top">
+            <a
+              href="https://drive.google.com/drive/u/1/folders/1bw-PLHiOR_fS-qzUczeqxmtR_4-vMiC9"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00ac47]/50 group"
+            >
             <div className="w-11 h-11 shrink-0">
               <svg
                 viewBox="0 0 48 48"
@@ -333,6 +339,7 @@ export default function PanduanPenulisanPanel() {
             </div>
             <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
           </a>
+          </Tooltip>
         </div>
       </Section>
 

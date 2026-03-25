@@ -3,6 +3,7 @@
 import React from "react";
 import { ClipboardList, Ruler, FolderTree, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Tooltip } from "@/components/ui/Tooltip";
 
 export type TabId = "tugas" | "panduan" | "kerangka";
 
@@ -84,6 +85,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
             href: "https://1drv.ms/w/c/23d53d2ba9c333ff/IQDbmR8lRCKaTaGiNEWfjXwMAZ_8kzGE0AhTazhxS8VlT2I?e=X91e5p",
             label: "Microsoft Word",
             sub: "Pembuatan Makalah",
+            tooltip: "Buka dokumen makalah di Microsoft Word Online",
             accentColor: "hover:border-[#185ABD]/40",
             icon: (
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 shrink-0 rounded-md">
@@ -98,6 +100,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
             href: "https://docs.google.com/presentation/d/1jCadIssP0vsUnT3XPwmgVdO8mV8sYSpIQYCUo5nQQ4g/edit?usp=sharing",
             label: "Google Slides",
             sub: "Slides Presentasi",
+            tooltip: "Buka slides presentasi di Google Slides",
             accentColor: "hover:border-[#F4A825]/40",
             icon: (
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 shrink-0 rounded-md">
@@ -113,6 +116,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
             href: "https://drive.google.com/drive/u/1/folders/1bw-PLHiOR_fS-qzUczeqxmtR_4-vMiC9",
             label: "Google Drive",
             sub: "Penyimpanan Berkas",
+            tooltip: "Buka folder penyimpanan berkas kelompok di Google Drive",
             accentColor: "hover:border-[#00AC47]/40",
             icon: (
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 shrink-0 rounded-md">
@@ -123,25 +127,26 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               </svg>
             ),
           },
-        ] as const).map(({ href, label, sub, icon, accentColor }) => (
-          <a
-            key={label}
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            className={cn(
-              "flex items-center gap-2.5 px-3 py-2.5 rounded-[10px] no-underline mb-1.5 border border-border bg-surface/50",
-              "transition-all duration-200 group hover:bg-border/70 hover:-translate-y-px",
-              accentColor
-            )}
-          >
-            {icon}
-            <div className="flex flex-col gap-px flex-1 min-w-0">
-              <span className="text-[0.75rem] font-medium text-textDim leading-tight group-hover:text-textColor transition-colors truncate">{label}</span>
-              <span className="text-[0.6rem] text-muted leading-tight truncate">{sub}</span>
-            </div>
-            <ExternalLink size={15} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
-          </a>
+        ] as const).map(({ href, label, sub, icon, accentColor, tooltip }) => (
+          <Tooltip key={label} content={tooltip} position="right">
+            <a
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              className={cn(
+                "flex items-center gap-2.5 px-3 py-2.5 rounded-[10px] no-underline mb-1.5 border border-border bg-surface/50 w-full",
+                "transition-all duration-200 group hover:bg-border/70 hover:-translate-y-px",
+                accentColor
+              )}
+            >
+              {icon}
+              <div className="flex flex-col gap-px flex-1 min-w-0">
+                <span className="text-[0.75rem] font-medium text-textDim leading-tight group-hover:text-textColor transition-colors truncate">{label}</span>
+                <span className="text-[0.6rem] text-muted leading-tight truncate">{sub}</span>
+              </div>
+              <ExternalLink size={15} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
+            </a>
+          </Tooltip>
         ))}
       </div>
 
