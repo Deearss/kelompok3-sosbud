@@ -24,7 +24,7 @@ export function Tooltip({ content, position = "top", children, className }: Tool
   };
 
   return (
-    <div className={cn("relative group/tooltip inline-flex", className)}>
+    <div className={cn("relative group/tooltip block w-full", className)}>
       {children}
       <div
         className={cn(
