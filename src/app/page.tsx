@@ -61,7 +61,7 @@ export default function Home() {
         />
       )}
 
-      <div className="flex h-screen relative z-10 w-full">
+      <div className="flex h-screen w-full">
         <Sidebar
           activeTab={activeTab}
           setActiveTab={handleTabSwitch}
