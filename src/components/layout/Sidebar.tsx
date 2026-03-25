@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ClipboardList, Ruler, FolderTree } from "lucide-react";
+import { ClipboardList, Ruler, FolderTree, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type TabId = "tugas" | "panduan" | "kerangka";
@@ -78,48 +78,73 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
         <div className="text-[0.6rem] font-bold tracking-widest uppercase text-muted mb-2">
           Tools
         </div>
-        
-        <a href="https://1drv.ms/w/c/23d53d2ba9c333ff/IQDbmR8lRCKaTaGiNEWfjXwMAZ_8kzGE0AhTazhxS8VlT2I?e=X91e5p" target="_blank" rel="noreferrer" className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg no-underline text-textDim text-[0.72rem] transition-colors duration-150 mb-0.5 hover:bg-border hover:text-textColor group">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5.5 h-5.5 shrink-0 rounded">
-            <rect width="24" height="24" rx="4" fill="#185ABD"/>
-            <path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7L14 3Z" fill="#2B7CD3"/>
-            <path d="M14 3v4h4L14 3Z" fill="#82B4E8"/>
-            <path d="M8 11h8M8 13.5h8M8 16h5" stroke="white" strokeWidth="1" strokeLinecap="round"/>
-          </svg>
-          <div className="flex flex-col gap-px">
-            <span className="text-[0.72rem] text-textDim leading-[1.2] group-hover:text-textColor">Microsoft Word</span>
-            <span className="text-[0.6rem] text-muted leading-[1.2]">Pembuatan Makalah</span>
-          </div>
-        </a>
-        
-        <a href="https://docs.google.com/presentation/d/1jCadIssP0vsUnT3XPwmgVdO8mV8sYSpIQYCUo5nQQ4g/edit?usp=sharing" target="_blank" rel="noreferrer" className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg no-underline text-textDim text-[0.72rem] transition-colors duration-150 mb-0.5 hover:bg-border hover:text-textColor group">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5.5 h-5.5 shrink-0 rounded">
-            <rect width="24" height="24" rx="4" fill="#F4A825"/>
-            <rect x="4" y="6" width="16" height="11" rx="1.5" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1"/>
-            <rect x="6" y="8" width="12" height="7" rx="1" fill="white" fillOpacity="0.35"/>
-            <line x1="12" y1="17" x2="12" y2="19" stroke="white" strokeWidth="1.2"/>
-            <line x1="9" y1="19" x2="15" y2="19" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
-          </svg>
-          <div className="flex flex-col gap-px">
-            <span className="text-[0.72rem] text-textDim leading-[1.2] group-hover:text-textColor">Google Slides</span>
-            <span className="text-[0.6rem] text-muted leading-[1.2]">Slides Presentasi</span>
-          </div>
-        </a>
-        
-        <a href="https://drive.google.com/drive/u/1/folders/1bw-PLHiOR_fS-qzUczeqxmtR_4-vMiC9" target="_blank" rel="noreferrer" className="flex items-center gap-2.5 px-2 py-1.5 rounded-lg no-underline text-textDim text-[0.72rem] transition-colors duration-150 mb-0.5 hover:bg-border hover:text-textColor group">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5.5 h-5.5 shrink-0 rounded">
-            <rect width="24" height="24" rx="4" fill="#1a1e2d"/>
-            <path d="M12 4 L19 17 H5 Z" fill="none"/>
-            <path d="M8 17 L5 17 L9 10 L12 17 Z" fill="#0066DA"/>
-            <path d="M12 4 L15.5 10 L12 17 L8.5 10 Z" fill="#00AC47"/>
-            <path d="M15.5 10 L19 17 L12 17 L8.5 10 Z" fill="#FFBA00"/>
-          </svg>
-          <div className="flex flex-col gap-px">
-            <span className="text-[0.72rem] text-textDim leading-[1.2] group-hover:text-textColor">Google Drive</span>
-            <span className="text-[0.6rem] text-muted leading-[1.2]">Penyimpanan Berkas</span>
-          </div>
-        </a>
+
+        {([
+          {
+            href: "https://1drv.ms/w/c/23d53d2ba9c333ff/IQDbmR8lRCKaTaGiNEWfjXwMAZ_8kzGE0AhTazhxS8VlT2I?e=X91e5p",
+            label: "Microsoft Word",
+            sub: "Pembuatan Makalah",
+            accentColor: "hover:border-[#185ABD]/40",
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 shrink-0 rounded-md">
+                <rect width="24" height="24" rx="5" fill="#185ABD"/>
+                <path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7L14 3Z" fill="#2B7CD3"/>
+                <path d="M14 3v4h4L14 3Z" fill="#82B4E8"/>
+                <path d="M8 11h8M8 13.5h8M8 16h5" stroke="white" strokeWidth="1" strokeLinecap="round"/>
+              </svg>
+            ),
+          },
+          {
+            href: "https://docs.google.com/presentation/d/1jCadIssP0vsUnT3XPwmgVdO8mV8sYSpIQYCUo5nQQ4g/edit?usp=sharing",
+            label: "Google Slides",
+            sub: "Slides Presentasi",
+            accentColor: "hover:border-[#F4A825]/40",
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 shrink-0 rounded-md">
+                <rect width="24" height="24" rx="5" fill="#F4A825"/>
+                <rect x="4" y="6" width="16" height="11" rx="1.5" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1"/>
+                <rect x="6" y="8" width="12" height="7" rx="1" fill="white" fillOpacity="0.35"/>
+                <line x1="12" y1="17" x2="12" y2="19" stroke="white" strokeWidth="1.2"/>
+                <line x1="9" y1="19" x2="15" y2="19" stroke="white" strokeWidth="1.2" strokeLinecap="round"/>
+              </svg>
+            ),
+          },
+          {
+            href: "https://drive.google.com/drive/u/1/folders/1bw-PLHiOR_fS-qzUczeqxmtR_4-vMiC9",
+            label: "Google Drive",
+            sub: "Penyimpanan Berkas",
+            accentColor: "hover:border-[#00AC47]/40",
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 shrink-0 rounded-md">
+                <rect width="24" height="24" rx="5" fill="#1a1e2d"/>
+                <path d="M8 17 L5 17 L9 10 L12 17 Z" fill="#0066DA"/>
+                <path d="M12 4 L15.5 10 L12 17 L8.5 10 Z" fill="#00AC47"/>
+                <path d="M15.5 10 L19 17 L12 17 L8.5 10 Z" fill="#FFBA00"/>
+              </svg>
+            ),
+          },
+        ] as const).map(({ href, label, sub, icon, accentColor }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className={cn(
+              "flex items-center gap-2.5 px-3 py-2.5 rounded-[10px] no-underline mb-1.5 border border-border bg-surface/50",
+              "transition-all duration-200 group hover:bg-border/70 hover:-translate-y-px",
+              accentColor
+            )}
+          >
+            {icon}
+            <div className="flex flex-col gap-px flex-1 min-w-0">
+              <span className="text-[0.75rem] font-medium text-textDim leading-tight group-hover:text-textColor transition-colors truncate">{label}</span>
+              <span className="text-[0.6rem] text-muted leading-tight truncate">{sub}</span>
+            </div>
+            <ExternalLink size={12} className="shrink-0 text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
+          </a>
+        ))}
       </div>
+
 
       <div className="font-inter text-[0.667rem] text-muted border-t border-border pt-5 leading-[1.8]">
         <strong className="text-accent2">Judul Makalah</strong><br />
