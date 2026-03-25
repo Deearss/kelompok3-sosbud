@@ -28,7 +28,7 @@ export function Tooltip({ content, position = "top", children, className }: Tool
       {children}
       <div
         className={cn(
-          "pointer-events-none absolute z-50 whitespace-nowrap",
+          "pointer-events-none absolute z-9999 whitespace-nowrap",
           "px-2.5 py-1.5 rounded-lg text-[0.7rem] font-medium",
           "bg-[#1e2235] text-textColor border border-border/60",
           "shadow-lg shadow-black/30 backdrop-blur-sm",
