@@ -140,7 +140,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               <span className="text-[0.75rem] font-medium text-textDim leading-tight group-hover:text-textColor transition-colors truncate">{label}</span>
               <span className="text-[0.6rem] text-muted leading-tight truncate">{sub}</span>
             </div>
-            <ExternalLink size={12} className="shrink-0 text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ExternalLink size={15} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
           </a>
         ))}
       </div>
