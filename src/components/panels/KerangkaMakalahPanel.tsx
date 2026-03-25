@@ -13,7 +13,7 @@ function OutlineNode({ title, children, defaultOpen = false }: { title: React.Re
   return (
     <li className="mb-1.5 list-none">
       <div
-        className="font-montserrat text-3.75 font-bold text-textColor px-4 py-3 bg-border rounded-2.25 cursor-pointer flex items-center justify-between transition-colors duration-200 hover:bg-[#2a2f42] select-none"
+        className="font-montserrat text-[0.933rem] font-bold text-textColor px-4 py-3 bg-border rounded-[9px] cursor-pointer flex items-center justify-between transition-colors duration-200 hover:bg-[#2a2f42] select-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{title}</span>
@@ -72,7 +72,7 @@ export default function KerangkaMakalahPanel() {
 
       <Section>
         <SectionTitle>Bagian Pembuka</SectionTitle>
-        <Card className="text-3.375 text-textDim !p-5">
+        <Card className="text-[13.5px] text-textDim !p-5">
           <div className="mb-2">
             <Badge variant="muted" className="!mr-2">1</Badge>
             <strong className="text-textColor">Cover</strong>

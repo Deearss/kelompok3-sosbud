@@ -57,7 +57,7 @@ export default function PanduanPenulisanPanel() {
 
       <Section>
         <SectionTitle>Format Dasar</SectionTitle>
-        <div className="bg-surface border border-border rounded-3.5 overflow-hidden mb-3.5">
+        <div className="bg-surface border border-border rounded-[14px] overflow-hidden mb-3.5">
           <table className="w-full border-collapse text-[0.9rem] text-left">
             <thead>
               <tr>
@@ -98,7 +98,7 @@ export default function PanduanPenulisanPanel() {
 
       <Section>
         <SectionTitle>Ketentuan Referensi</SectionTitle>
-        <div className="bg-surface border border-border rounded-3.5 overflow-hidden mb-3.5">
+        <div className="bg-surface border border-border rounded-[14px] overflow-hidden mb-3.5">
           <table className="w-full border-collapse text-[0.9rem] text-left">
             <thead>
               <tr>
@@ -205,12 +205,12 @@ export default function PanduanPenulisanPanel() {
               return (
                 <li
                   key={idx}
-                  className="flex items-start gap-2.5 py-2.5 border-b border-white/5 last:border-0 text-3.75 text-textDim"
+                  className="flex items-start gap-2.5 py-2.5 border-b border-white/5 last:border-0 text-[0.933rem] text-textDim"
                   onClick={() => toggleCheck(idx)}
                 >
                   <div
                     className={cn(
-                      "w-4.5 h-4.5 border-0.375 border-border rounded ml-0.5 shrink-0 mt-0.5 cursor-pointer transition-colors duration-150 flex items-center justify-center select-none",
+                      "w-4.5 h-4.5 border-[1.5px] border-border rounded ml-0.5 shrink-0 mt-0.5 cursor-pointer transition-colors duration-150 flex items-center justify-center select-none",
                       {
                         "bg-accent2 border-accent2 text-[#0d0f14] font-bold text-[0.733rem]": checked,
                       }
@@ -227,7 +227,7 @@ export default function PanduanPenulisanPanel() {
           </ul>
           <div
             className={cn(
-              "mt-3.5 font-mono text-2.75 transition-colors",
+              "mt-3.5 font-mono text-[11px] transition-colors",
               isAllDone ? "text-accent2" : "text-muted"
             )}
           >

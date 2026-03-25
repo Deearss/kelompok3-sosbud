@@ -9,7 +9,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "bg-surface border border-border rounded-3.5 px-6 py-5.5 mb-3.5 transition-colors duration-200 hover:border-[#2e344d]",
+        "bg-surface border border-border rounded-[14px] px-6 py-5.5 mb-3.5 transition-colors duration-200 hover:border-[#2e344d]",
         className
       )}
       {...props}

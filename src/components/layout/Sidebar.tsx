@@ -40,7 +40,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               key={item.id}
               onClick={() => setActiveTab(item.id)}
               className={cn(
-                "flex items-center gap-3 px-3.5 py-2.5 rounded-2.5 cursor-pointer transition-colors duration-150 border border-transparent text-3.75 font-medium text-textDim select-none relative group hover:bg-white/5 hover:text-textColor",
+                "flex items-center gap-3 px-3.5 py-2.5 rounded-[10px] cursor-pointer transition-colors duration-150 border border-transparent text-[0.933rem] font-medium text-textDim select-none relative group hover:bg-white/5 hover:text-textColor",
                 {
                   "bg-accent/10 border-accent/20 text-accent hover:bg-accent/10 hover:text-accent": isActive,
                 }

@@ -16,7 +16,7 @@ export function PageHeader({ tag, title, desc }: PageHeaderProps) {
       <h1 className="font-montserrat text-[2.133rem] font-extrabold leading-[1.15] text-textColor">
         {title}
       </h1>
-      <p className="text-textDim mt-2 text-3.75">{desc}</p>
+      <p className="text-textDim mt-2 text-[0.933rem]">{desc}</p>
     </div>
   );
 }

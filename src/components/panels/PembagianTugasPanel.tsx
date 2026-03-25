@@ -29,7 +29,7 @@ function TaskCard({
   return (
     <div
       className={cn(
-        "bg-surface border border-border rounded-3.5 p-5 transition-colors duration-200 relative overflow-hidden group hover:border-[#2e344d] hover:-translate-y-0.5",
+        "bg-surface border border-border rounded-[14px] p-5 transition-colors duration-200 relative overflow-hidden group hover:border-[#2e344d] hover:-translate-y-0.5",
         className
       )}
     >
@@ -101,7 +101,7 @@ function CoordCard({
   return (
     <div
       className={cn(
-        "bg-surface border border-border rounded-3.5 px-4 py-4.5 transition-colors duration-200 hover:border-[#2e344d]",
+        "bg-surface border border-border rounded-[14px] px-4 py-4.5 transition-colors duration-200 hover:border-[#2e344d]",
         {
           "border-danger/25 bg-danger/5": isCritical,
           "border-accent2/25 bg-accent2/5": isFinal,
