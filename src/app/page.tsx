@@ -35,10 +35,10 @@ export default function Home() {
         className="fixed top-0 left-0 h-1 bg-accent2 z-50 transition-all duration-300 ease-out"
         style={{ width: `${progressWidth}%`, opacity }}
       />
-      <div className="flex min-h-screen relative z-10 w-full overflow-hidden">
+      <div className="flex h-screen relative z-10 w-full">
         <Sidebar activeTab={activeTab} setActiveTab={handleTabSwitch} />
         
-        <main className="flex-1 px-12 py-10 max-w-300 mx-auto w-full">
+        <main className="flex-1 px-12 py-10 overflow-y-auto">
           {activeTab === "tugas" && <PembagianTugasPanel />}
           {activeTab === "panduan" && <PanduanPenulisanPanel />}
           {activeTab === "kerangka" && <KerangkaMakalahPanel />}
