@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ClipboardList, Ruler, FolderTree, ExternalLink } from "lucide-react";
+import { ClipboardList, Ruler, FolderTree, ExternalLink, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Tooltip } from "@/components/ui/Tooltip";
 
@@ -10,9 +10,12 @@ export type TabId = "tugas" | "panduan" | "kerangka";
 interface SidebarProps {
   activeTab: TabId;
   setActiveTab: (tab: TabId) => void;
+  // mobile drawer controls
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
+export function Sidebar({ activeTab, setActiveTab, isOpen = false, onClose }: SidebarProps) {
   const navItems = [
     { id: "tugas", label: "Pembagian Tugas", num: 5, icon: ClipboardList },
     { id: "panduan", label: "Panduan Penulisan", num: 7, icon: Ruler },
@@ -20,7 +23,18 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   ] as const;
 
   return (
-    <aside className="w-87.5 shrink-0 bg-surface border-r border-border flex flex-col sticky top-0 h-screen py-8 px-6 gap-0">
+    <aside
+      className={cn(
+        // Base styles
+        "shrink-0 bg-surface border-r border-border flex flex-col py-8 px-6 gap-0",
+        // Desktop — sticky sidebar
+        "md:sticky md:top-0 md:h-screen md:w-87.5 md:translate-x-0",
+        // Mobile — fixed drawer that slides in from left
+        "fixed inset-y-0 left-0 z-40 w-70 transition-transform duration-300 ease-in-out",
+        isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+      )}
+    >
+      {/* Branding */}
       <div className="mb-9">
         <div className="font-inter text-[0.667rem] tracking-[0.15em] text-muted uppercase mb-1.5">
           Mata Kuliah · Sosbud
@@ -30,8 +44,18 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
           <br />
           Project Hub
         </div>
+
+        {/* Close button — mobile only */}
+        <button
+          onClick={onClose}
+          className="md:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg text-textDim hover:bg-border hover:text-textColor transition-colors"
+          aria-label="Tutup menu"
+        >
+          <X size={18} />
+        </button>
       </div>
 
+      {/* Navigation tabs */}
       <nav className="flex flex-col gap-1.5 flex-1">
         {navItems.map((item) => {
           const isActive = activeTab === item.id;
@@ -41,19 +65,17 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               key={item.id}
               onClick={() => setActiveTab(item.id)}
               className={cn(
-                "flex items-center gap-3 px-3.5 py-2.5 rounded-[10px] cursor-pointer transition-colors duration-150 border border-transparent text-[0.933rem] font-medium text-textDim select-none relative group hover:bg-white/5 hover:text-textColor",
-                {
-                  "bg-accent/10 border-accent/20 text-accent hover:bg-accent/10 hover:text-accent": isActive,
-                }
+                "flex items-center gap-3 px-3.5 py-2.5 rounded-[10px] cursor-pointer",
+                "transition-colors duration-150 border border-transparent",
+                "text-[0.933rem] font-medium text-textDim select-none",
+                "relative group hover:bg-white/5 hover:text-textColor",
+                isActive && "bg-accent/10 border-accent/20 text-accent hover:bg-accent/10 hover:text-accent"
               )}
             >
               <div
                 className={cn(
                   "w-8 h-8 rounded-lg flex items-center justify-center bg-border shrink-0 transition-colors",
-                  {
-                    "bg-accent/15 text-accent": isActive,
-                    "group-hover:text-textColor": !isActive,
-                  }
+                  isActive ? "bg-accent/15 text-accent" : "group-hover:text-textColor"
                 )}
               >
                 <IconComponent size={18} strokeWidth={2.5} />
@@ -62,10 +84,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               <span
                 className={cn(
                   "font-inter text-[0.6rem] px-1.5 py-0.5 rounded-full ml-auto",
-                  {
-                    "bg-accent/20 text-accent": isActive,
-                    "bg-border text-muted": !isActive,
-                  }
+                  isActive ? "bg-accent/20 text-accent" : "bg-border text-muted"
                 )}
               >
                 {item.num}
@@ -75,6 +94,7 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
         })}
       </nav>
 
+      {/* Tool links */}
       <div className="mt-5 pt-4 pb-2.5 border-t border-border">
         <div className="text-[0.6rem] font-bold tracking-widest uppercase text-muted mb-2">
           Tools
@@ -134,7 +154,8 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
               target="_blank"
               rel="noreferrer"
               className={cn(
-                "flex items-center gap-2.5 px-3 py-2.5 rounded-[10px] no-underline mb-1.5 border border-border bg-surface/50 w-full",
+                "flex items-center gap-2.5 px-3 py-2.5 rounded-[10px] no-underline mb-1.5",
+                "border border-border bg-surface/50 w-full",
                 "transition-all duration-200 group hover:bg-border/70 hover:-translate-y-px",
                 accentColor
               )}
@@ -150,10 +171,10 @@ export function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
         ))}
       </div>
 
-
+      {/* Judul makalah */}
       <div className="font-inter text-[0.667rem] text-muted border-t border-border pt-5 leading-[1.8]">
         <strong className="text-accent2">Judul Makalah</strong><br />
-        Peran Etika & Norma dalam<br />
+        Peran Etika &amp; Norma dalam<br />
         Meredam Pertentangan Sosial<br />
         sebagai Upaya Integrasi<br />
         Masyarakat

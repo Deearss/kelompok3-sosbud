@@ -71,7 +71,7 @@ export default function PanduanPenulisanPanel() {
 
       <Section>
         <SectionTitle>Format Dasar</SectionTitle>
-        <div className="bg-surface border border-border rounded-[14px] overflow-hidden mb-3.5">
+        <div className="bg-surface border border-border rounded-[14px] overflow-hidden overflow-x-auto mb-3.5">
           <table className="w-full border-collapse text-[0.9rem] text-left">
             <thead>
               <tr>
@@ -137,7 +137,7 @@ export default function PanduanPenulisanPanel() {
 
       <Section>
         <SectionTitle>Ketentuan Referensi</SectionTitle>
-        <div className="bg-surface border border-border rounded-[14px] overflow-hidden mb-3.5">
+        <div className="bg-surface border border-border rounded-[14px] overflow-hidden overflow-x-auto mb-3.5">
           <table className="w-full border-collapse text-[0.9rem] text-left">
             <thead>
               <tr>
