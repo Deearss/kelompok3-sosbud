@@ -5,6 +5,7 @@ import { PageHeader, Section, SectionTitle } from "@/components/ui/PageHeader";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
+import { ExternalLink } from "lucide-react";
 
 const FORMAT_RULES = [
   { label: "Kertas", value: "HVS Kuarto (A4)" },
@@ -234,9 +235,7 @@ export default function PanduanPenulisanPanel() {
                 Menulis makalah bersama
               </div>
             </div>
-            <div className="text-[0.85rem] text-muted transition-colors duration-200 group-hover:text-textDim">
-              ↗
-            </div>
+            <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
           </a>
 
           <a
@@ -301,9 +300,7 @@ export default function PanduanPenulisanPanel() {
                 Presentasi
               </div>
             </div>
-            <div className="text-[0.85rem] text-muted transition-colors duration-200 group-hover:text-textDim">
-              ↗
-            </div>
+            <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
           </a>
 
           <a
@@ -334,9 +331,7 @@ export default function PanduanPenulisanPanel() {
                 Menyimpan semua file
               </div>
             </div>
-            <div className="text-[0.85rem] text-muted transition-colors duration-200 group-hover:text-textDim">
-              ↗
-            </div>
+            <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
           </a>
         </div>
       </Section>
