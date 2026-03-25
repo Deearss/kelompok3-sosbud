@@ -30,16 +30,16 @@ export function Sidebar({ activeTab, setActiveTab, isOpen = false, onClose }: Si
         // Desktop — sticky sidebar
         "md:sticky md:top-0 md:h-screen md:w-87.5 md:translate-x-0",
         // Mobile — fixed drawer that slides in from left
-        "fixed inset-y-0 left-0 z-40 w-70 transition-transform duration-300 ease-in-out",
+        "fixed inset-y-0 left-0 z-40 w-56 transition-transform duration-300 ease-in-out",
         isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       )}
     >
       {/* Branding */}
-      <div className="mb-9">
-        <div className="font-inter text-[0.667rem] tracking-[0.15em] text-muted uppercase mb-1.5">
+      <div className="mb-7 md:mb-9">
+        <div className="font-inter text-[0.6rem] md:text-[0.667rem] tracking-[0.15em] text-muted uppercase mb-1.5">
           Mata Kuliah · Sosbud
         </div>
-        <div className="font-montserrat text-[1.333rem] font-extrabold leading-[1.2] text-textColor">
+        <div className="font-montserrat text-[1.1rem] md:text-[1.333rem] font-extrabold leading-[1.2] text-textColor">
           Kelompok <span className="text-accent">3</span>
           <br />
           Project Hub
@@ -65,20 +65,20 @@ export function Sidebar({ activeTab, setActiveTab, isOpen = false, onClose }: Si
               key={item.id}
               onClick={() => setActiveTab(item.id)}
               className={cn(
-                "flex items-center gap-3 px-3.5 py-2.5 rounded-[10px] cursor-pointer",
+                "flex items-center gap-2 md:gap-3 px-2.5 md:px-3.5 py-2 md:py-2.5 rounded-[10px] cursor-pointer",
                 "transition-colors duration-150 border border-transparent",
-                "text-[0.933rem] font-medium text-textDim select-none",
+                "text-[0.8rem] md:text-[0.933rem] font-medium text-textDim select-none",
                 "relative group hover:bg-white/5 hover:text-textColor",
                 isActive && "bg-accent/10 border-accent/20 text-accent hover:bg-accent/10 hover:text-accent"
               )}
             >
               <div
                 className={cn(
-                  "w-8 h-8 rounded-lg flex items-center justify-center bg-border shrink-0 transition-colors",
+                  "w-6 h-6 md:w-8 md:h-8 rounded-lg flex items-center justify-center bg-border shrink-0 transition-colors",
                   isActive ? "bg-accent/15 text-accent" : "group-hover:text-textColor"
                 )}
               >
-                <IconComponent size={18} strokeWidth={2.5} />
+                <IconComponent size={15} strokeWidth={2.5} />
               </div>
               {item.label}
               <span
