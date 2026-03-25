@@ -17,7 +17,7 @@ export function Badge({
   return (
     <Component
       className={cn(
-        "inline-flex items-center gap-1.25 text-[0.733rem] font-inter px-2.25 py-0.75 rounded-full border mr-1.5 mb-1",
+        "inline-flex items-center gap-1.25 text-[0.6rem] md:text-[0.733rem] font-inter px-2.25 py-0.75 rounded-full border mr-1.5 mb-1",
         {
           "text-accent border-accent/30 bg-accent/5": variant === "yellow",
           "text-accent2 border-accent2/30 bg-accent2/5": variant === "green",

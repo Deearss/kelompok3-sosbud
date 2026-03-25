@@ -48,7 +48,7 @@ function TaskCard({
           <div className="font-inter text-[0.667rem] text-muted uppercase tracking-[0.08em]">
             {role}
           </div>
-          <div className="font-montserrat text-[1rem] font-bold text-textColor my-1">
+          <div className="font-montserrat text-[0.85rem] md:text-[1rem] font-bold text-textColor my-1">
             {name}
           </div>
         </div>
@@ -120,7 +120,7 @@ function CoordCard({
       >
         {step}
       </div>
-      <div className="font-montserrat text-[1rem] font-bold text-textColor mb-1">
+      <div className="font-montserrat text-[0.85rem] md:text-[1rem] font-bold text-textColor mb-1">
         {name}
       </div>
       <div className="text-[0.733rem] text-muted uppercase tracking-[0.07em] mb-2.5">
