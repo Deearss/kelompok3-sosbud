@@ -131,7 +131,7 @@ export function Sidebar({
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 shrink-0 rounded-md"
+                  className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-md"
                 >
                   <rect width="24" height="24" rx="5" fill="#185ABD" />
                   <path
@@ -159,7 +159,7 @@ export function Sidebar({
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 shrink-0 rounded-md"
+                  className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-md"
                 >
                   <rect width="24" height="24" rx="5" fill="#F4A825" />
                   <rect
@@ -214,7 +214,7 @@ export function Sidebar({
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 shrink-0 rounded-md"
+                  className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-md"
                 >
                   <rect width="24" height="24" rx="5" fill="#1a1e2d" />
                   <path d="M8 17 L5 17 L9 10 L12 17 Z" fill="#0066DA" />
@@ -239,10 +239,10 @@ export function Sidebar({
             >
               {icon}
               <div className="flex flex-col gap-px flex-1 min-w-0">
-                <span className="text-[0.65rem] font-medium text-textDim leading-tight group-hover:text-textColor transition-colors truncate">
+                <span className="text-[0.65rem] md:text-[0.75rem] font-medium text-textDim leading-tight group-hover:text-textColor transition-colors truncate">
                   {label}
                 </span>
-                <span className="text-[0.5rem] text-muted leading-tight truncate">
+                <span className="text-[0.5rem] md:text-[0.6rem] text-muted leading-tight truncate">
                   {sub}
                 </span>
               </div>

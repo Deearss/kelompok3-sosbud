@@ -30,13 +30,13 @@
 }
 
 :root {
-  --base: 14px; /* Default for mobile/small screens */
+  --base: 16px; /* Default for mobile/small screens */
 }
 
 /* Tablet (md: 768px) */
 @media (min-width: 768px) {
   :root {
-    --base: 16px;
+    --base: 18px;
   }
 }
 
