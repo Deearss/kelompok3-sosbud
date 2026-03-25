@@ -50,3 +50,12 @@ Kedua container tabel (`Format Dasar` & `Ketentuan Referensi`) ditambahkan `over
 ## Catatan
 
 Grids di `PembagianTugasPanel` sudah responsif sejak awal (`grid-cols-1 sm:grid-cols-2`). Grid `Alur Koordinasi` menggunakan `md:grid-cols-2 lg:grid-cols-3` — sudah aman di mobile.
+
+---
+
+### UI Scaling & Typography (Tambahan)
+
+- **`globals.css` Root Font Size**: Base font di-set responsif `14px` (mobile), `16px` (tablet `md:`), dan `18px` (desktop `lg:`). Semua elemen bereferensi `rem` otomatis mengecil proporsional di mobile.
+- **Sidebar Width**: Dikurangi dari `w-70` (280px) menjadi `w-64` (256px) agar tersisa lebih area _backdrop_ untuk di-tap.
+- **Sidebar Tools & Icons**: Icon diturunkan dari `w-8` ke `w-6`, teks di-skala ke `0.65rem` & `0.5rem` di mobile (kembali membesar dengan prefix `md:` pada desktop).
+- **Badge & Task Title**: Ukuran font `<Badge>` dan judul kartu tugas dikurangi menggunakan pola `text-[0.6rem] md:text-[0.733rem]` agar tidak memecah layout atau menyebabkan teks _wrap_ berlebih di layar HP.
