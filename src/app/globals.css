@@ -30,7 +30,21 @@
 }
 
 :root {
-  --base: 18px;
+  --base: 14px; /* Default for mobile/small screens */
+}
+
+/* Tablet (md: 768px) */
+@media (min-width: 768px) {
+  :root {
+    --base: 16px;
+  }
+}
+
+/* Desktop (lg: 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --base: 18px; /* Original base size */
+  }
 }
 
 html {
