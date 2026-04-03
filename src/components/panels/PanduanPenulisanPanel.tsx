@@ -163,12 +163,12 @@ export default function PanduanPenulisanPanel() {
           </a>
           </Tooltip>
 
-          <Tooltip content="Buka presentasi di Google Slides" position="top">
+          <Tooltip content="Buka presentasi di Canva" position="top">
             <a
-              href="https://docs.google.com/presentation/d/1jCadIssP0vsUnT3XPwmgVdO8mV8sYSpIQYCUo5nQQ4g/edit?usp=sharing"
+              href="https://canva.link/o135ylm9i2pjr80"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#f4a825]/50 group"
+              className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00C4CC]/50 group"
             >
             <div className="w-11 h-11 shrink-0">
               <svg
@@ -177,7 +177,7 @@ export default function PanduanPenulisanPanel() {
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-full h-full"
               >
-                <rect width="48" height="48" rx="8" fill="#F4A825" />
+                <rect width="48" height="48" rx="8" fill="#00C4CC" />
                 <rect
                   x="10"
                   y="14"
@@ -220,7 +220,7 @@ export default function PanduanPenulisanPanel() {
             </div>
             <div className="flex-1 min-w-0">
               <div className="text-[0.9rem] font-semibold text-textColor">
-                Google Slides
+                Canva
               </div>
               <div className="text-[0.75rem] text-textDim mt-0.5">
                 Presentasi

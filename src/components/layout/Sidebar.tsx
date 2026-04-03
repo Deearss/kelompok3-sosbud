@@ -149,11 +149,11 @@ export function Sidebar({
               ),
             },
             {
-              href: "https://docs.google.com/presentation/d/1jCadIssP0vsUnT3XPwmgVdO8mV8sYSpIQYCUo5nQQ4g/edit?usp=sharing",
-              label: "Google Slides",
+              href: "https://canva.link/o135ylm9i2pjr80",
+              label: "Canva",
               sub: "Slides Presentasi",
-              tooltip: "Buka slides presentasi di Google Slides",
-              accentColor: "hover:border-[#F4A825]/40",
+              tooltip: "Buka slides presentasi di Canva",
+              accentColor: "hover:border-[#00C4CC]/40",
               icon: (
                 <svg
                   viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ export function Sidebar({
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-md"
                 >
-                  <rect width="24" height="24" rx="5" fill="#F4A825" />
+                  <rect width="24" height="24" rx="5" fill="#00C4CC" />
                   <rect
                     x="4"
                     y="6"
