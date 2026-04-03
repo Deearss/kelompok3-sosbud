@@ -6,6 +6,7 @@
 - Efek transisi artifisial (Progress Bar) pindah tab
 - Implementasi Mobile UI (Hamburger Menu & Drawer)
 - Hapus seksi `Ketentuan Referensi` dan `Ketentuan Konten` yang terlalu *alay*/verbose pada `PanduanPenulisanPanel`
+- Mengganti tautan dan branding "Google Slides" menjadi "Canva" pada `Sidebar` dan `PanduanPenulisanPanel`
 
 ## Sedang Berjalan (In Progress)
 - Minor UX & styling touch-ups sesuai masukan User.
