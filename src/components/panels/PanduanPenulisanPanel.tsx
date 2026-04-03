@@ -137,18 +137,22 @@ export default function PanduanPenulisanPanel() {
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-full h-full"
               >
-                <rect width="48" height="48" rx="8" fill="#185ABD" />
-                <path
-                  d="M28 12H14a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V20L28 12Z"
-                  fill="#2B7CD3"
-                />
-                <path d="M28 12v8h8L28 12Z" fill="#82B4E8" />
-                <path
-                  d="M16 22h16M16 27h16M16 32h10"
-                  stroke="white"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
+                <defs>
+                  <clipPath id="word-clip2">
+                    <rect x="16" y="6" width="28" height="36" rx="4" />
+                  </clipPath>
+                  <filter id="word-shadow2" x="-10%" y="-10%" width="130%" height="130%">
+                    <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodOpacity="0.25" />
+                  </filter>
+                </defs>
+                <g clipPath="url(#word-clip2)">
+                  <rect x="16" y="6" width="28" height="36" fill="#103F91" />
+                  <rect x="16" y="6" width="28" height="9" fill="#41A5EE" />
+                  <rect x="16" y="15" width="28" height="9" fill="#2B7CD3" />
+                  <rect x="16" y="24" width="28" height="9" fill="#185ABD" />
+                </g>
+                <rect x="4" y="14" width="26" height="20" rx="3" fill="#185ABD" filter="url(#word-shadow2)" />
+                <path d="M 8 18 L 12 30 L 14.5 30 L 17 21 L 19.5 30 L 22 30 L 26 18 L 23 18 L 20.5 27 L 18 18 L 16 18 L 13.5 27 L 11 18 Z" fill="white" />
               </svg>
             </div>
             <div className="flex-1 min-w-0">

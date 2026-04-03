@@ -128,23 +128,27 @@ export function Sidebar({
               accentColor: "hover:border-[#185ABD]/40",
               icon: (
                 <svg
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 48 48"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-md"
+                  className="w-6 h-6 md:w-8 md:h-8 shrink-0"
                 >
-                  <rect width="24" height="24" rx="5" fill="#185ABD" />
-                  <path
-                    d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7L14 3Z"
-                    fill="#2B7CD3"
-                  />
-                  <path d="M14 3v4h4L14 3Z" fill="#82B4E8" />
-                  <path
-                    d="M8 11h8M8 13.5h8M8 16h5"
-                    stroke="white"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                  />
+                  <defs>
+                    <clipPath id="word-clip1">
+                      <rect x="16" y="6" width="28" height="36" rx="4" />
+                    </clipPath>
+                    <filter id="word-shadow1" x="-10%" y="-10%" width="130%" height="130%">
+                      <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodOpacity="0.25" />
+                    </filter>
+                  </defs>
+                  <g clipPath="url(#word-clip1)">
+                    <rect x="16" y="6" width="28" height="36" fill="#103F91" />
+                    <rect x="16" y="6" width="28" height="9" fill="#41A5EE" />
+                    <rect x="16" y="15" width="28" height="9" fill="#2B7CD3" />
+                    <rect x="16" y="24" width="28" height="9" fill="#185ABD" />
+                  </g>
+                  <rect x="4" y="14" width="26" height="20" rx="3" fill="#185ABD" filter="url(#word-shadow1)" />
+                  <path d="M 8 18 L 12 30 L 14.5 30 L 17 21 L 19.5 30 L 22 30 L 26 18 L 23 18 L 20.5 27 L 18 18 L 16 18 L 13.5 27 L 11 18 Z" fill="white" />
                 </svg>
               ),
             },
