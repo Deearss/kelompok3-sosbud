@@ -190,7 +190,7 @@ export default function PanduanPenulisanPanel() {
 
           <Tooltip content="Buka presentasi di Canva" position="top">
             <a
-              href="https://canva.link/o135ylm9i2pjr80"
+              href="https://canva.link/kelompok3sosbud"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00C4CC]/50 group"
@@ -255,9 +255,9 @@ export default function PanduanPenulisanPanel() {
                   className="w-full h-full"
                 >
                   <rect width="48" height="48" rx="8" fill="white" />
-                  <path d="M19 11 L9 28.3 L14 37 L24 19.7 Z" fill="#34A853"/>
-                  <path d="M29 11 L19 11 L29 28.3 L39 28.3 Z" fill="#FFC107"/>
-                  <path d="M14 37 L19 28.3 L39 28.3 L34 37 Z" fill="#4285F4"/>
+                  <path d="M19 11 L9 28.3 L14 37 L24 19.7 Z" fill="#34A853" />
+                  <path d="M29 11 L19 11 L29 28.3 L39 28.3 Z" fill="#FFC107" />
+                  <path d="M14 37 L19 28.3 L39 28.3 L34 37 Z" fill="#4285F4" />
                 </svg>
               </div>
               <div className="flex-1 min-w-0">
