@@ -16,23 +16,6 @@ const FORMAT_RULES = [
   { label: "Daftar Pustaka", value: "APA Style" },
 ];
 
-const REF_RULES = [
-  {
-    src: "Jurnal Akademik",
-    status: <Badge variant="green">✅ Utama</Badge>,
-    desc: "Diutamakan — bobot tertinggi",
-  },
-  {
-    src: "Buku Teks / Ilmiah",
-    status: <Badge variant="green">✅ Utama</Badge>,
-    desc: "Bisa dijadikan referensi utama",
-  },
-  {
-    src: "Blog / Wikipedia",
-    status: <Badge variant="red">⚠️ Bahan awal</Badge>,
-    desc: "Boleh untuk riset awal, tapi jangan jadi sumber utama",
-  },
-];
 
 const CHECKLIST_ITEMS = [
   "Font Times New Roman ukuran 12",
@@ -135,68 +118,7 @@ export default function PanduanPenulisanPanel() {
         </Card>
       </Section>
 
-      <Section>
-        <SectionTitle>Ketentuan Referensi</SectionTitle>
-        <div className="bg-surface border border-border rounded-[14px] overflow-hidden overflow-x-auto mb-3.5">
-          <table className="w-full border-collapse text-[0.9rem] text-left">
-            <thead>
-              <tr>
-                <th className="font-montserrat text-[0.733rem] font-bold tracking-[0.08em] uppercase text-muted py-2.5 px-3.5 border-b border-border">
-                  Sumber
-                </th>
-                <th className="font-montserrat text-[0.733rem] font-bold tracking-[0.08em] uppercase text-muted py-2.5 px-3.5 border-b border-border">
-                  Status
-                </th>
-                <th className="font-montserrat text-[0.733rem] font-bold tracking-[0.08em] uppercase text-muted py-2.5 px-3.5 border-b border-border">
-                  Keterangan
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {REF_RULES.map((rule, idx) => (
-                <tr
-                  key={idx}
-                  className="hover:bg-white/5 transition-colors group"
-                >
-                  <td className="py-3 px-3.5 border-b border-white/5 text-textColor font-medium group-last-of-type:border-b-0 align-top">
-                    {rule.src}
-                  </td>
-                  <td className="py-3 px-3.5 border-b border-white/5 text-textDim group-last-of-type:border-b-0 align-top pt-3 pb-2">
-                    {rule.status}
-                  </td>
-                  <td className="py-3 px-3.5 border-b border-white/5 text-textDim group-last-of-type:border-b-0 align-top">
-                    {rule.desc}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Section>
 
-      <Section>
-        <SectionTitle>Ketentuan Konten</SectionTitle>
-        <Card className="p-5!">
-          <ul className="list-none m-0 p-0">
-            <li className="text-[0.867rem] text-textDim py-1.5 pl-4 relative border-b border-white/5 last:border-0 before:content-['›'] before:absolute before:left-0 before:text-accent before:font-bold">
-              Setiap klaim/pernyataan <strong>wajib</strong> disertai referensi
-              akademik
-            </li>
-            <li className="text-[0.867rem] text-textDim py-1.5 pl-4 relative border-b border-white/5 last:border-0 before:content-['›'] before:absolute before:left-0 before:text-accent before:font-bold">
-              Sertakan minimal <strong>1 contoh kasus nyata</strong> yang
-              relevan dan bisa dipertanggungjawabkan
-            </li>
-            <li className="text-[0.867rem] text-textDim py-1.5 pl-4 relative border-b border-white/5 last:border-0 before:content-['›'] before:absolute before:left-0 before:text-accent before:font-bold">
-              Analisis tidak boleh dangkal — harus ada penjelasan{" "}
-              <strong>&quot;mengapa&quot;</strong> dan{" "}
-              <strong>&quot;dampaknya&quot;</strong>
-            </li>
-            <li className="text-[0.867rem] text-textDim py-1.5 pl-4 relative border-b border-white/5 last:border-0 before:content-['›'] before:absolute before:left-0 before:text-accent before:font-bold">
-              Struktur argumen harus logis dan tidak ada celah antar bagian
-            </li>
-          </ul>
-        </Card>
-      </Section>
 
       <Section>
         <SectionTitle>Tools Kolaborasi</SectionTitle>
