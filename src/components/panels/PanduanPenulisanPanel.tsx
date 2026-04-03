@@ -16,15 +16,13 @@ const FORMAT_RULES = [
   { label: "Daftar Pustaka", value: "APA Style" },
 ];
 
-
 const CHECKLIST_ITEMS = [
   "Font Times New Roman ukuran 12",
   "Spasi 2 di seluruh dokumen",
   "Kertas Kuarto (A4)",
-  "Semua klaim ada referensi akademiknya",
+  "Semua referensi harus ada link-nya biar bisa di verifikasi kebenarannya",
   "Ada minimal 1 contoh kasus nyata",
   "Daftar pustaka format APA",
-  "Sumber utama dari jurnal/buku akademik (bukan blog/Wikipedia)",
   "Struktur lengkap (Cover → Daftar Pustaka)",
   "Semua anggota sudah review keseluruhan isi",
 ];
@@ -118,8 +116,6 @@ export default function PanduanPenulisanPanel() {
         </Card>
       </Section>
 
-
-
       <Section>
         <SectionTitle>Tools Kolaborasi</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -130,41 +126,66 @@ export default function PanduanPenulisanPanel() {
               rel="noreferrer"
               className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-blue-400/50 group"
             >
-            <div className="w-11 h-11 shrink-0">
-              <svg
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
-              >
-                <defs>
-                  <clipPath id="word-clip2">
-                    <rect x="16" y="6" width="28" height="36" rx="4" />
-                  </clipPath>
-                  <filter id="word-shadow2" x="-10%" y="-10%" width="130%" height="130%">
-                    <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodOpacity="0.25" />
-                  </filter>
-                </defs>
-                <g clipPath="url(#word-clip2)">
-                  <rect x="16" y="6" width="28" height="36" fill="#103F91" />
-                  <rect x="16" y="6" width="28" height="9" fill="#41A5EE" />
-                  <rect x="16" y="15" width="28" height="9" fill="#2B7CD3" />
-                  <rect x="16" y="24" width="28" height="9" fill="#185ABD" />
-                </g>
-                <rect x="4" y="14" width="26" height="20" rx="3" fill="#185ABD" filter="url(#word-shadow2)" />
-                <path d="M 8 18 L 12 30 L 14.5 30 L 17 21 L 19.5 30 L 22 30 L 26 18 L 23 18 L 20.5 27 L 18 18 L 16 18 L 13.5 27 L 11 18 Z" fill="white" />
-              </svg>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="text-[0.9rem] font-semibold text-textColor">
-                Microsoft Word
+              <div className="w-11 h-11 shrink-0">
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-full"
+                >
+                  <defs>
+                    <clipPath id="word-clip2">
+                      <rect x="16" y="6" width="28" height="36" rx="4" />
+                    </clipPath>
+                    <filter
+                      id="word-shadow2"
+                      x="-10%"
+                      y="-10%"
+                      width="130%"
+                      height="130%"
+                    >
+                      <feDropShadow
+                        dx="0"
+                        dy="1"
+                        stdDeviation="1.5"
+                        floodOpacity="0.25"
+                      />
+                    </filter>
+                  </defs>
+                  <g clipPath="url(#word-clip2)">
+                    <rect x="16" y="6" width="28" height="36" fill="#103F91" />
+                    <rect x="16" y="6" width="28" height="9" fill="#41A5EE" />
+                    <rect x="16" y="15" width="28" height="9" fill="#2B7CD3" />
+                    <rect x="16" y="24" width="28" height="9" fill="#185ABD" />
+                  </g>
+                  <rect
+                    x="4"
+                    y="14"
+                    width="26"
+                    height="20"
+                    rx="3"
+                    fill="#185ABD"
+                    filter="url(#word-shadow2)"
+                  />
+                  <path
+                    d="M 8 18 L 12 30 L 14.5 30 L 17 21 L 19.5 30 L 22 30 L 26 18 L 23 18 L 20.5 27 L 18 18 L 16 18 L 13.5 27 L 11 18 Z"
+                    fill="white"
+                  />
+                </svg>
               </div>
-              <div className="text-[0.75rem] text-textDim mt-0.5">
-                Menulis makalah bersama
+              <div className="flex-1 min-w-0">
+                <div className="text-[0.9rem] font-semibold text-textColor">
+                  Microsoft Word
+                </div>
+                <div className="text-[0.75rem] text-textDim mt-0.5">
+                  Menulis makalah bersama
+                </div>
               </div>
-            </div>
-            <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
-          </a>
+              <ExternalLink
+                size={16}
+                className="shrink-0 text-muted group-hover:text-textDim transition-colors"
+              />
+            </a>
           </Tooltip>
 
           <Tooltip content="Buka presentasi di Canva" position="top">
@@ -174,67 +195,84 @@ export default function PanduanPenulisanPanel() {
               rel="noreferrer"
               className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00C4CC]/50 group"
             >
-            <div className="w-11 h-11 shrink-0">
-              <svg
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full rounded-full"
-              >
-                <defs>
-                  <linearGradient id="canvaGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#00E5FF" />
-                    <stop offset="60%" stopColor="#306EE8" />
-                    <stop offset="100%" stopColor="#8A2BE2" />
-                  </linearGradient>
-                </defs>
-                <circle cx="24" cy="24" r="24" fill="url(#canvaGrad2)" />
-                <path d="M31.21 16.63C28.69 13.11 23.95 12 18.91 14.53C13.25 17.39 9.87 24.11 11.23 30.12C12.59 36.13 18.23 39.81 24.51 39.42C29.08 39.13 32.06 36.03 33.72 32.32C34.55 30.46 31.81 29.41 30.65 31.05C29.13 33.2 26.86 34.61 24.08 34.68C18.66 34.82 16.03 30.01 16.14 24.63C16.22 20.35 19.34 16.67 24.02 16.01C26.33 15.68 28.84 16.29 30.45 17.8C31.54 18.82 32.58 17.51 31.21 16.63Z" fill="white" />
-              </svg>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="text-[0.9rem] font-semibold text-textColor">
-                Canva
+              <div className="w-11 h-11 shrink-0">
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-full rounded-full"
+                >
+                  <defs>
+                    <linearGradient
+                      id="canvaGrad2"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stopColor="#00E5FF" />
+                      <stop offset="60%" stopColor="#306EE8" />
+                      <stop offset="100%" stopColor="#8A2BE2" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="24" cy="24" r="24" fill="url(#canvaGrad2)" />
+                  <path
+                    d="M31.21 16.63C28.69 13.11 23.95 12 18.91 14.53C13.25 17.39 9.87 24.11 11.23 30.12C12.59 36.13 18.23 39.81 24.51 39.42C29.08 39.13 32.06 36.03 33.72 32.32C34.55 30.46 31.81 29.41 30.65 31.05C29.13 33.2 26.86 34.61 24.08 34.68C18.66 34.82 16.03 30.01 16.14 24.63C16.22 20.35 19.34 16.67 24.02 16.01C26.33 15.68 28.84 16.29 30.45 17.8C31.54 18.82 32.58 17.51 31.21 16.63Z"
+                    fill="white"
+                  />
+                </svg>
               </div>
-              <div className="text-[0.75rem] text-textDim mt-0.5">
-                Presentasi
+              <div className="flex-1 min-w-0">
+                <div className="text-[0.9rem] font-semibold text-textColor">
+                  Canva
+                </div>
+                <div className="text-[0.75rem] text-textDim mt-0.5">
+                  Presentasi
+                </div>
               </div>
-            </div>
-            <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
-          </a>
+              <ExternalLink
+                size={16}
+                className="shrink-0 text-muted group-hover:text-textDim transition-colors"
+              />
+            </a>
           </Tooltip>
 
-          <Tooltip content="Buka folder berkas kelompok di Google Drive" position="top">
+          <Tooltip
+            content="Buka folder berkas kelompok di Google Drive"
+            position="top"
+          >
             <a
               href="https://drive.google.com/drive/u/1/folders/1bw-PLHiOR_fS-qzUczeqxmtR_4-vMiC9"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00ac47]/50 group"
             >
-            <div className="w-11 h-11 shrink-0">
-              <svg
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
-              >
-                <rect width="48" height="48" rx="8" fill="#1E1E2E" />
-                <path d="M24 10 L38 34 H10 Z" fill="none" />
-                <path d="M17 34 L10 34 L18 20 L25 34 Z" fill="#0066DA" />
-                <path d="M24 10 L31 22 L24 34 L17 22 Z" fill="#00AC47" />
-                <path d="M31 22 L38 34 L25 34 L18 22 Z" fill="#FFBA00" />
-              </svg>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="text-[0.9rem] font-semibold text-textColor">
-                Google Drive
+              <div className="w-11 h-11 shrink-0">
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-full"
+                >
+                  <rect width="48" height="48" rx="8" fill="white" />
+                  <path d="M16 33.5l-5.6-9.7 10.1-17.5h11.2l-10 17.5-5.7 9.7z" fill="#34A853"/>
+                  <path d="M37.3 33.5H16l5.7-9.7h21.3l-5.7 9.7z" fill="#4285F4"/>
+                  <path d="M26.2 6.3H15l10.8 18.7h11.1L26.2 6.3z" fill="#FFC107"/>
+                </svg>
               </div>
-              <div className="text-[0.75rem] text-textDim mt-0.5">
-                Menyimpan semua file
+              <div className="flex-1 min-w-0">
+                <div className="text-[0.9rem] font-semibold text-textColor">
+                  Google Drive
+                </div>
+                <div className="text-[0.75rem] text-textDim mt-0.5">
+                  Menyimpan semua file
+                </div>
               </div>
-            </div>
-            <ExternalLink size={16} className="shrink-0 text-muted group-hover:text-textDim transition-colors" />
-          </a>
+              <ExternalLink
+                size={16}
+                className="shrink-0 text-muted group-hover:text-textDim transition-colors"
+              />
+            </a>
           </Tooltip>
         </div>
       </Section>

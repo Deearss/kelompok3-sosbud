@@ -186,15 +186,15 @@ export function Sidebar({
               accentColor: "hover:border-[#00AC47]/40",
               icon: (
                 <svg
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 48 48"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-md"
+                  className="w-6 h-6 md:w-8 md:h-8 shrink-0"
                 >
-                  <rect width="24" height="24" rx="5" fill="#1a1e2d" />
-                  <path d="M8 17 L5 17 L9 10 L12 17 Z" fill="#0066DA" />
-                  <path d="M12 4 L15.5 10 L12 17 L8.5 10 Z" fill="#00AC47" />
-                  <path d="M15.5 10 L19 17 L12 17 L8.5 10 Z" fill="#FFBA00" />
+                  <rect width="48" height="48" rx="8" fill="white" />
+                  <path d="M16 33.5l-5.6-9.7 10.1-17.5h11.2l-10 17.5-5.7 9.7z" fill="#34A853"/>
+                  <path d="M37.3 33.5H16l5.7-9.7h21.3l-5.7 9.7z" fill="#4285F4"/>
+                  <path d="M26.2 6.3H15l10.8 18.7h11.1L26.2 6.3z" fill="#FFC107"/>
                 </svg>
               ),
             },
