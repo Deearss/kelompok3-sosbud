@@ -192,9 +192,9 @@ export function Sidebar({
                   className="w-6 h-6 md:w-8 md:h-8 shrink-0"
                 >
                   <rect width="48" height="48" rx="8" fill="white" />
-                  <path d="M16 33.5l-5.6-9.7 10.1-17.5h11.2l-10 17.5-5.7 9.7z" fill="#34A853"/>
-                  <path d="M37.3 33.5H16l5.7-9.7h21.3l-5.7 9.7z" fill="#4285F4"/>
-                  <path d="M26.2 6.3H15l10.8 18.7h11.1L26.2 6.3z" fill="#FFC107"/>
+                  <path d="M19 11 L9 28.3 L14 37 L24 19.7 Z" fill="#34A853"/>
+                  <path d="M29 11 L19 11 L29 28.3 L39 28.3 Z" fill="#FFC107"/>
+                  <path d="M14 37 L19 28.3 L39 28.3 L34 37 Z" fill="#4285F4"/>
                 </svg>
               ),
             },
