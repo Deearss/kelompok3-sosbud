@@ -156,49 +156,20 @@ export function Sidebar({
               accentColor: "hover:border-[#00C4CC]/40",
               icon: (
                 <svg
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 48 48"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-md"
+                  className="w-6 h-6 md:w-8 md:h-8 shrink-0 rounded-full"
                 >
-                  <rect width="24" height="24" rx="5" fill="#00C4CC" />
-                  <rect
-                    x="4"
-                    y="6"
-                    width="16"
-                    height="11"
-                    rx="1.5"
-                    fill="white"
-                    fillOpacity="0.2"
-                    stroke="white"
-                    strokeWidth="1"
-                  />
-                  <rect
-                    x="6"
-                    y="8"
-                    width="12"
-                    height="7"
-                    rx="1"
-                    fill="white"
-                    fillOpacity="0.35"
-                  />
-                  <line
-                    x1="12"
-                    y1="17"
-                    x2="12"
-                    y2="19"
-                    stroke="white"
-                    strokeWidth="1.2"
-                  />
-                  <line
-                    x1="9"
-                    y1="19"
-                    x2="15"
-                    y2="19"
-                    stroke="white"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
+                  <defs>
+                    <linearGradient id="canvaGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#00E5FF" />
+                      <stop offset="60%" stopColor="#306EE8" />
+                      <stop offset="100%" stopColor="#8A2BE2" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="24" cy="24" r="24" fill="url(#canvaGrad1)" />
+                  <path d="M31.21 16.63C28.69 13.11 23.95 12 18.91 14.53C13.25 17.39 9.87 24.11 11.23 30.12C12.59 36.13 18.23 39.81 24.51 39.42C29.08 39.13 32.06 36.03 33.72 32.32C34.55 30.46 31.81 29.41 30.65 31.05C29.13 33.2 26.86 34.61 24.08 34.68C18.66 34.82 16.03 30.01 16.14 24.63C16.22 20.35 19.34 16.67 24.02 16.01C26.33 15.68 28.84 16.29 30.45 17.8C31.54 18.82 32.58 17.51 31.21 16.63Z" fill="white" />
                 </svg>
               ),
             },
