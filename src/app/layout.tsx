@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kelompok 3 SOSBUD — Project Hub",
     description: "Dashboard integrasi tugas kelompok: Peran Etika, Moral, Akhlak, dan Norma untuk meredam pertentangan sosial.",
-    url: "https://kelompok3sosbud.netlify.app", // Adjust if deployed elsewhere
+    url: "https://kelompok3-sosbud.netlify.app", // Adjust if deployed elsewhere
     siteName: "SOSBUD KELOMPOK 3",
     images: [
       {
