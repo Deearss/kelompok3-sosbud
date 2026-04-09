@@ -146,7 +146,7 @@ export default function PanduanPenulisanPanel() {
       <Section>
         <SectionTitle>Kerangka Makalah</SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-          <Card className="flex flex-col gap-2 p-4 h-fit">
+          <Card className="flex flex-col gap-2 p-4 h-full">
             <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB I · PENDAHULUAN</Badge>
             <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
               1.1 Latar Belakang<br/>
@@ -156,7 +156,7 @@ export default function PanduanPenulisanPanel() {
             </div>
           </Card>
           
-          <Card className="flex flex-col gap-2 p-4 h-fit">
+          <Card className="flex flex-col gap-2 p-4 h-full">
             <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB II · PEMBAHASAN</Badge>
             <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
               <span className="font-semibold text-textColor">2.1 Konsep Etika, Moral, Akhlak, dan Norma</span><br/>
@@ -174,7 +174,7 @@ export default function PanduanPenulisanPanel() {
             </div>
           </Card>
 
-          <Card className="flex flex-col gap-2 p-4 h-fit">
+          <Card className="flex flex-col gap-2 p-4 h-full">
             <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB III · PENUTUP</Badge>
             <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
               3.1 Kesimpulan<br/>
@@ -183,24 +183,26 @@ export default function PanduanPenulisanPanel() {
           </Card>
         </div>
         
-        <Card className="mt-3.5 p-5 flex flex-col gap-3">
-          <span className="text-accent2 font-bold tracking-widest text-[0.9rem] border-b border-border pb-3 mb-1">DAFTAR PUSTAKA</span>
-          <ul className="text-[0.75rem] md:text-[0.8rem] text-textDim flex flex-col gap-3 list-none pl-0 m-0">
+        <div className="mt-5">
+          <div className="text-accent2 font-bold tracking-widest text-[0.9rem] border-b border-border pb-3 mb-4">DAFTAR PUSTAKA</div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5">
             {REFERENCES.map((ref, idx) => (
-              <li key={idx} className="pl-5 -indent-5 leading-relaxed">
-                {ref.citation}
-                <a
-                  href={ref.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-accent2 hover:underline wrap-break-word"
-                >
-                  {ref.url}
-                </a>
-              </li>
+              <Card key={idx} className="p-4 transition-all duration-300 border border-border hover:border-accent/40 shadow-sm hover:shadow-md group hover:bg-[#1a1e2d] hover:-translate-y-0.5">
+                <div className="text-[0.75rem] md:text-[0.8rem] text-textDim leading-relaxed">
+                  {ref.citation}
+                  <a
+                    href={ref.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-accent2 hover:underline wrap-break-word font-mono text-[0.7rem] block mt-1.5 opacity-80 group-hover:opacity-100 transition-opacity"
+                  >
+                    {ref.url}
+                  </a>
+                </div>
+              </Card>
             ))}
-          </ul>
-        </Card>
+          </div>
+        </div>
       </Section>
 
       <Section>

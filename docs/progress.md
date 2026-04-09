@@ -17,6 +17,7 @@
 - Mengatur *state management* dengan Zustand dan persist middleware untuk mempertahankan riwayat status menu navigasi aktif di *Sidebar* dan riwayat *Checklist Panel Final* pada *PanduanPenulisanPanel*.
 - Menyamaratakan struktur section `PembagianTugasPanel` dengan menghapus prop gimmick `isLeader` dan unit `Koordinator`.
 - Menghapus elemen angka statis yang tidak ada penugasan fungsional dari tab navigasi *Sidebar*.
+- Perbaikan layout UI `PanduanPenulisanPanel`: menyamakan tinggi card *Kerangka Makalah* (`h-full`) dan memisahkan setiap item *Daftar Pustaka* menjadi komponen *Card* berbasis grid.
 
 ## Sedang Berjalan (In Progress)
 - Minor UX & styling touch-ups sesuai masukan User.
