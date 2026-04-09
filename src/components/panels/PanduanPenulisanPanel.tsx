@@ -86,7 +86,7 @@ export default function PanduanPenulisanPanel() {
       <Section>
         <SectionTitle>Kerangka Makalah</SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-          <Card className="flex flex-col gap-2 p-4">
+          <Card className="flex flex-col gap-2 p-4 h-fit">
             <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB I · PENDAHULUAN</Badge>
             <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
               1.1 Latar Belakang<br/>
@@ -96,21 +96,30 @@ export default function PanduanPenulisanPanel() {
             </div>
           </Card>
           
-          <Card className="flex flex-col gap-2 p-4">
+          <Card className="flex flex-col gap-2 p-4 h-fit">
             <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB II · PEMBAHASAN</Badge>
             <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
-              2.1 Pengertian Etika, Moral, Akhlak, dan Norma<br/>
-              2.2 Pertentangan Sosial dalam Masyarakat<br/>
-              2.3 Peran Etika dan Norma dalam Meredam Pertentangan Sosial (Integrasi)
+              <span className="font-semibold text-textColor">2.1 Konsep Etika, Moral, Akhlak, dan Norma</span><br/>
+              &nbsp;&nbsp;2.1.1 Etika<br/>
+              &nbsp;&nbsp;2.1.2 Moral dan Akhlak sebagai Dimensi Etika<br/>
+              &nbsp;&nbsp;2.1.3 Norma Sebagai Kontrol Sosial<br/>
+              <span className="font-semibold text-textColor mt-2 block">2.2 Pertentangan Sosial</span>
+              &nbsp;&nbsp;2.2.1 Definisi Pertentangan Sosial<br/>
+              &nbsp;&nbsp;2.2.2 Faktor Penyebab Pertentangan Sosial<br/>
+              &nbsp;&nbsp;2.2.3 Dampak Pertentangan Sosial<br/>
+              <span className="font-semibold text-textColor mt-2 block">2.3 Solusi dan Kasus Nyata</span>
+              &nbsp;&nbsp;2.3.1 Mekanisme Kerja Etika dan Norma<br/>
+              &nbsp;&nbsp;2.3.2 Kontribusi Terhadap Upaya Integrasi Masyarakat<br/>
+              &nbsp;&nbsp;2.3.3 Contoh Kasus Nyata
             </div>
           </Card>
 
-          <Card className="flex flex-col gap-2 p-4">
+          <Card className="flex flex-col gap-2 p-4 h-fit">
             <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB III · PENUTUP</Badge>
             <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
               3.1 Kesimpulan<br/>
               3.2 Saran<br/>
-              <span className="text-accent2 mt-1 block font-semibold">Daftar Pustaka (Format APA)</span>
+              <span className="text-accent2 mt-3 block font-semibold border-t border-border pt-2">DAFTAR PUSTAKA</span>
             </div>
           </Card>
         </div>
