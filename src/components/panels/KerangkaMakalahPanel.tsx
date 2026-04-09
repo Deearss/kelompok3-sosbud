@@ -117,53 +117,33 @@ export default function KerangkaMakalahPanel() {
       <Section>
         <SectionTitle>Isi Utama — Klik untuk expand</SectionTitle>
         <ul className="list-none p-0 m-0">
-          <OutlineNode title="BAB I — Pendahuluan" defaultOpen>
+          <OutlineNode title="BAB I PENDAHULUAN" defaultOpen>
             <OutlineSub>
               <strong>1.1 Latar Belakang</strong>
-              <OutlineSub2>
-                <OutlineSub2Item>
-                  Fenomena pertentangan sosial di Indonesia (data/fakta nyata)
-                </OutlineSub2Item>
-                <OutlineSub2Item>
-                  Relevansi norma & etika sebagai solusi
-                </OutlineSub2Item>
-                <OutlineSub2Item>Urgensi pembahasan topik</OutlineSub2Item>
-              </OutlineSub2>
             </OutlineSub>
             <OutlineSub>
               <strong>1.2 Rumusan Masalah</strong>
-              <OutlineSub2>
-                <OutlineSub2Item>
-                  Apa itu etika, moral, akhlak, dan norma?
-                </OutlineSub2Item>
-                <OutlineSub2Item>
-                  Bentuk dan faktor penyebab pertentangan sosial?
-                </OutlineSub2Item>
-                <OutlineSub2Item>
-                  Bagaimana peran etika & norma dalam integrasi masyarakat?
-                </OutlineSub2Item>
-              </OutlineSub2>
             </OutlineSub>
             <OutlineSub>
               <strong>1.3 Tujuan Penulisan</strong>
             </OutlineSub>
             <OutlineSub>
-              <strong>1.4 Manfaat Penulisan</strong> — teoritis & praktis
+              <strong>1.4 Manfaat Penulisan</strong>
             </OutlineSub>
           </OutlineNode>
 
-          <OutlineNode title="BAB II — Pembahasan">
+          <OutlineNode title="BAB II PEMBAHASAN">
             <OutlineSub>
               <strong>2.1 Konsep Etika, Moral, Akhlak, dan Norma</strong>
               <OutlineSub2>
                 <OutlineSub2Item>
-                  2.1.1 Etika — definisi, nilai internal, sumber norma
+                  2.1.1 Etika
                 </OutlineSub2Item>
                 <OutlineSub2Item>
-                  2.1.2 Moral & Akhlak sebagai Dimensi Etika
+                  2.1.2 Moral dan Akhlak sebagai Dimensi Etika
                 </OutlineSub2Item>
                 <OutlineSub2Item>
-                  2.1.3 Norma — jenis-jenis, fungsi kontrol sosial
+                  2.1.3 Norma Sebagai Kontrol Sosial
                 </OutlineSub2Item>
               </OutlineSub2>
             </OutlineSub>
@@ -171,62 +151,38 @@ export default function KerangkaMakalahPanel() {
               <strong>2.2 Pertentangan Sosial</strong>
               <OutlineSub2>
                 <OutlineSub2Item>
-                  2.2.1 Definisi — bedakan konflik, disintegrasi, diskriminasi
+                  2.2.1 Definisi Pertentangan Sosial
                 </OutlineSub2Item>
                 <OutlineSub2Item>
-                  2.2.2 Faktor Penyebab — kepentingan, SARA, kesenjangan,
-                  lemahnya etika
+                  2.2.2 Faktor Penyebab Pertentangan Sosial
                 </OutlineSub2Item>
                 <OutlineSub2Item>
-                  2.2.3 Dampak — kohesi sosial, stabilitas, pembangunan
+                  2.2.3 Dampak Pertentangan Sosial
                 </OutlineSub2Item>
               </OutlineSub2>
             </OutlineSub>
             <OutlineSub>
-              <strong>
-                2.3 Peran Etika & Norma dalam Meredam Pertentangan
-              </strong>
+              <strong>2.3 Solusi dan Kasus Nyata</strong>
               <OutlineSub2>
                 <OutlineSub2Item>
-                  2.3.1 Mekanisme kerja — rem sosial sebelum konflik eskalasi
+                  2.3.1 Mekanisme Kerja Etika dan Norma
                 </OutlineSub2Item>
                 <OutlineSub2Item>
-                  2.3.2 Kontribusi terhadap Integrasi Masyarakat
+                  2.3.2 Kontribusi Terhadap Upaya Integrasi Masyarakat
                 </OutlineSub2Item>
                 <OutlineSub2Item>
-                  2.3.3 Contoh Kasus Nyata di Indonesia ⚠️ butuh sumber kuat
+                  2.3.3 Contoh Kasus Nyata
                 </OutlineSub2Item>
               </OutlineSub2>
             </OutlineSub>
           </OutlineNode>
 
-          <OutlineNode title="BAB III — Penutup">
+          <OutlineNode title="BAB III PENUTUP">
             <OutlineSub>
               <strong>3.1 Kesimpulan</strong>
-              <OutlineSub2>
-                <OutlineSub2Item>
-                  Jawab langsung 3 rumusan masalah dari BAB I
-                </OutlineSub2Item>
-                <OutlineSub2Item>
-                  Tegaskan rantai kausal: etika → norma → meredam pertentangan →
-                  integrasi
-                </OutlineSub2Item>
-                <OutlineSub2Item>
-                  Singkat, padat, tidak bertele-tele
-                </OutlineSub2Item>
-              </OutlineSub2>
             </OutlineSub>
             <OutlineSub>
               <strong>3.2 Saran</strong>
-              <OutlineSub2>
-                <OutlineSub2Item>
-                  Realistis dan konkret (hindari yang terlalu utopis)
-                </OutlineSub2Item>
-                <OutlineSub2Item>
-                  Contoh: pendidikan karakter, penguatan nilai etika di
-                  institusi sosial
-                </OutlineSub2Item>
-              </OutlineSub2>
             </OutlineSub>
           </OutlineNode>
         </ul>
