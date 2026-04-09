@@ -127,52 +127,100 @@ export default function PanduanPenulisanPanel() {
           <span className="text-accent2 font-bold tracking-widest text-[0.9rem] border-b border-border pb-3 mb-1">DAFTAR PUSTAKA</span>
           <ul className="text-[0.75rem] md:text-[0.8rem] text-textDim flex flex-col gap-3 list-none pl-0 m-0">
             <li className="pl-5 -indent-5 leading-relaxed">
-              Aditya, N. R. (2026, Februari 26). Bareskrim Tegaskan Proses Pidana Kasus Pandji Pragiwaksono Tetap Berjalan meski Sudah Sidang Adat. Dipetik April 2026, dari Kompas.com: https://nasional.kompas.com/read/2026/02/26/11214791/bareskrim-tegaskan-proses-pidana-kasus-pandji-pragiwaksono-tetap-berjalan
+              Aditya, N. R. (2026, Februari 26). Bareskrim Tegaskan Proses Pidana Kasus Pandji Pragiwaksono Tetap Berjalan meski Sudah Sidang Adat. Dipetik April 2026, dari Kompas.com:{" "}
+              <a href="https://nasional.kompas.com/read/2026/02/26/11214791/bareskrim-tegaskan-proses-pidana-kasus-pandji-pragiwaksono-tetap-berjalan" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://nasional.kompas.com/read/2026/02/26/11214791/bareskrim-tegaskan-proses-pidana-kasus-pandji-pragiwaksono-tetap-berjalan
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Ambo Dalle, T. (2025). Dimensi-Dimensi dalam Beragama: Spiritual, Intelektual, Emosi, Etika, dan Sosial. Ikhlas : Jurnal Ilmiah Pendidikan Islam, 2(1), 151-165. doi:https://doi.org/10.61132/ikhlas.v2i1.302
+              Ambo Dalle, T. (2025). Dimensi-Dimensi dalam Beragama: Spiritual, Intelektual, Emosi, Etika, dan Sosial. Ikhlas : Jurnal Ilmiah Pendidikan Islam, 2(1), 151-165. doi:
+              <a href="https://doi.org/10.61132/ikhlas.v2i1.302" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://doi.org/10.61132/ikhlas.v2i1.302
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Anwar, S. (2016, Juni). Teori Pertingkatan Norma dalam Usul Fikih. Asy Syir`ah Jurnal Ilmu Syari&apos;ah dan Hukum, 50(1), 141-167. Dipetik Maret 2026, dari https://digilib.uin-suka.ac.id/id/eprint/24338
+              Anwar, S. (2016, Juni). Teori Pertingkatan Norma dalam Usul Fikih. Asy Syir`ah Jurnal Ilmu Syari&apos;ah dan Hukum, 50(1), 141-167. Dipetik Maret 2026, dari{" "}
+              <a href="https://digilib.uin-suka.ac.id/id/eprint/24338" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://digilib.uin-suka.ac.id/id/eprint/24338
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Bahasa, P. (2025, Oktober). Kamus Besar Bahasa Indonesia. Dipetik Maret 2026, dari Kamus Besar Bahasa Indonesia (KBBI) daring: https://kbbi.web.id/norma
+              Bahasa, P. (2025, Oktober). Kamus Besar Bahasa Indonesia. Dipetik Maret 2026, dari Kamus Besar Bahasa Indonesia (KBBI) daring:{" "}
+              <a href="https://kbbi.web.id/norma" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://kbbi.web.id/norma
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Bandaso, R. A. (2026, Februari 8). Pandji Pragiwaksono Akan Diadili Secara Adat Buntut Candaan Budaya Toraja. Dipetik April 2026, dari detiknews: https://news.detik.com/berita/d-8346422/pandji-pragiwaksono-akan-diadili-secara-adat-buntut-candaan-budaya-toraja
+              Bandaso, R. A. (2026, Februari 8). Pandji Pragiwaksono Akan Diadili Secara Adat Buntut Candaan Budaya Toraja. Dipetik April 2026, dari detiknews:{" "}
+              <a href="https://news.detik.com/berita/d-8346422/pandji-pragiwaksono-akan-diadili-secara-adat-buntut-candaan-budaya-toraja" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://news.detik.com/berita/d-8346422/pandji-pragiwaksono-akan-diadili-secara-adat-buntut-candaan-budaya-toraja
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Darmanto. (2026). INTEGRASI ETIKA ISLAM DAN PENDIDIKAN KARAKTER HUMANIS DI SEKOLAH ISLAM DALAM MERESPON KRISIS SOSIAL (Studi Kasus Pada SDIT Alam Nurul Islam Dua Ngawi). Al-Muaddib Jurnal Kajian Ilmu Kependidikan, 62-80. doi:https://doi.org/10.46773/cwws4p73
+              Darmanto. (2026). INTEGRASI ETIKA ISLAM DAN PENDIDIKAN KARAKTER HUMANIS DI SEKOLAH ISLAM DALAM MERESPON KRISIS SOSIAL (Studi Kasus Pada SDIT Alam Nurul Islam Dua Ngawi). Al-Muaddib Jurnal Kajian Ilmu Kependidikan, 62-80. doi:
+              <a href="https://doi.org/10.46773/cwws4p73" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://doi.org/10.46773/cwws4p73
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Detikcom, T. (2025, November 4). Kecaman ke Pandji Pragiwaksono imbas candaan singgung adat Toraja. Dipetik April 2026, dari detiknews: https://news.detik.com/berita/d-8192755/kecaman-ke-pandji-pragiwaksono-imbas-candaan-singgung-adat-toraja
+              Detikcom, T. (2025, November 4). Kecaman ke Pandji Pragiwaksono imbas candaan singgung adat Toraja. Dipetik April 2026, dari detiknews:{" "}
+              <a href="https://news.detik.com/berita/d-8192755/kecaman-ke-pandji-pragiwaksono-imbas-candaan-singgung-adat-toraja" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://news.detik.com/berita/d-8192755/kecaman-ke-pandji-pragiwaksono-imbas-candaan-singgung-adat-toraja
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              detikSulsel, T. (2025, November 4). Buntut Candaan Adat Toraja, Pandji Pragiwaksono Minta Maaf. Dipetik April 2026, dari detiksumut: https://www.detik.com/sumut/berita/d-8193038/buntut-candaan-adat-toraja-pandji-pragiwaksono-minta-maaf
+              detikSulsel, T. (2025, November 4). Buntut Candaan Adat Toraja, Pandji Pragiwaksono Minta Maaf. Dipetik April 2026, dari detiksumut:{" "}
+              <a href="https://www.detik.com/sumut/berita/d-8193038/buntut-candaan-adat-toraja-pandji-pragiwaksono-minta-maaf" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://www.detik.com/sumut/berita/d-8193038/buntut-candaan-adat-toraja-pandji-pragiwaksono-minta-maaf
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Nurmaya, E. R. (2026, Februari 11). Akhir Perjalanan Panjang Kontroversi Pandji Pragiwaksono di Toraja: dari Materi Viral hingga Sidang Adat 2026. Dipetik April 2026, dari Suara Merdeka: https://www.suaramerdeka.com/nasional/0416707976/akhir-perjalanan-panjang-kontroversi-pandji-pragiwaksono-di-toraja
+              Nurmaya, E. R. (2026, Februari 11). Akhir Perjalanan Panjang Kontroversi Pandji Pragiwaksono di Toraja: dari Materi Viral hingga Sidang Adat 2026. Dipetik April 2026, dari Suara Merdeka:{" "}
+              <a href="https://www.suaramerdeka.com/nasional/0416707976/akhir-perjalanan-panjang-kontroversi-pandji-pragiwaksono-di-toraja" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://www.suaramerdeka.com/nasional/0416707976/akhir-perjalanan-panjang-kontroversi-pandji-pragiwaksono-di-toraja
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Rahmani, N. P. (2026, Februari 2). Pandji Pragiwaksono diperiksa terkait dugaan penghinaan suku Toraja. Dipetik April 2026, dari Antara News: https://www.antaranews.com/berita/5391510/pandji-pragiwaksono-diperiksa-terkait-dugaan-penghinaan-suku-toraja
+              Rahmani, N. P. (2026, Februari 2). Pandji Pragiwaksono diperiksa terkait dugaan penghinaan suku Toraja. Dipetik April 2026, dari Antara News:{" "}
+              <a href="https://www.antaranews.com/berita/5391510/pandji-pragiwaksono-diperiksa-terkait-dugaan-penghinaan-suku-toraja" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://www.antaranews.com/berita/5391510/pandji-pragiwaksono-diperiksa-terkait-dugaan-penghinaan-suku-toraja
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Rahmawati, D. (2025, November 3). Anggota DPR Desak Pandji Pragiwaksono Minta Maaf Buntut Candaan Adat Toraja. Dipetik April 2026, dari detikNews: https://news.detik.com/berita/d-8191373/anggota-dpr-desak-pandji-pragiwaksono-minta-maaf-buntut-candaan-adat-toraja
+              Rahmawati, D. (2025, November 3). Anggota DPR Desak Pandji Pragiwaksono Minta Maaf Buntut Candaan Adat Toraja. Dipetik April 2026, dari detikNews:{" "}
+              <a href="https://news.detik.com/berita/d-8191373/anggota-dpr-desak-pandji-pragiwaksono-minta-maaf-buntut-candaan-adat-toraja" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://news.detik.com/berita/d-8191373/anggota-dpr-desak-pandji-pragiwaksono-minta-maaf-buntut-candaan-adat-toraja
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Revalina, A., &amp; Aslan, A. (2025). PERUBAHAN NORMA ETIKA DALAM HUBUNGAN SOSIAL DI PLATFORM MEDIA SOSIAL. Jurnal Komunikasi, 223-231. Dipetik April 2026, dari https://jkm.my.id/index.php/komunikasi/article/view/144
+              Revalina, A., &amp; Aslan, A. (2025). PERUBAHAN NORMA ETIKA DALAM HUBUNGAN SOSIAL DI PLATFORM MEDIA SOSIAL. Jurnal Komunikasi, 223-231. Dipetik April 2026, dari{" "}
+              <a href="https://jkm.my.id/index.php/komunikasi/article/view/144" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://jkm.my.id/index.php/komunikasi/article/view/144
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Rokhmah, U. N., &amp; Siregar, T. E. (2024). Integrasi Nilai, Moral, dan Norma dalam Pendidikan Dasar. Jurnal An-Nashr. doi:https://doi.org/10.65317/an-nashr.v3i2.58
+              Rokhmah, U. N., &amp; Siregar, T. E. (2024). Integrasi Nilai, Moral, dan Norma dalam Pendidikan Dasar. Jurnal An-Nashr. doi:
+              <a href="https://doi.org/10.65317/an-nashr.v3i2.58" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://doi.org/10.65317/an-nashr.v3i2.58
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Sudarminta, J. (2013). Etika Umum: Kajian tentang beberapa masalah pokok dan teori etika normatif. Daerah Istimewa Yogyakarta: PT. Kanisius. Dipetik Maret 2026, dari https://www.google.co.id/books/edition/Etika_Umum/yrziEAAAQBAJ
+              Sudarminta, J. (2013). Etika Umum: Kajian tentang beberapa masalah pokok dan teori etika normatif. Daerah Istimewa Yogyakarta: PT. Kanisius. Dipetik Maret 2026, dari{" "}
+              <a href="https://www.google.co.id/books/edition/Etika_Umum/yrziEAAAQBAJ" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://www.google.co.id/books/edition/Etika_Umum/yrziEAAAQBAJ
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Widodo, S. (2011, Januari). IMPLEMENTASI BELA NEGARA UNTUK MEWUJUDKAN NASIONALISME. Jurnal Ilmiah CIVIS, 1(1), 18-31. Dipetik April 2026, dari https://journal.upgris.ac.id/index.php/civis/article/view/572
+              Widodo, S. (2011, Januari). IMPLEMENTASI BELA NEGARA UNTUK MEWUJUDKAN NASIONALISME. Jurnal Ilmiah CIVIS, 1(1), 18-31. Dipetik April 2026, dari{" "}
+              <a href="https://journal.upgris.ac.id/index.php/civis/article/view/572" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://journal.upgris.ac.id/index.php/civis/article/view/572
+              </a>
             </li>
             <li className="pl-5 -indent-5 leading-relaxed">
-              Wijoko Lestariono, A. S. (Desember 2022). KONFLIK DAN PERUBAHAN SOSIAL. Wacana: Jurnal Ilmu Sosial dan Ilmu Politik Interdisiplin, 465-477. doi:https://doi.org/10.37304/wacana.v9i2.7476
+              Wijoko Lestariono, A. S. (Desember 2022). KONFLIK DAN PERUBAHAN SOSIAL. Wacana: Jurnal Ilmu Sosial dan Ilmu Politik Interdisiplin, 465-477. doi:
+              <a href="https://doi.org/10.37304/wacana.v9i2.7476" target="_blank" rel="noreferrer" className="text-accent2 hover:underline break-words">
+                https://doi.org/10.37304/wacana.v9i2.7476
+              </a>
             </li>
           </ul>
         </Card>
