@@ -193,7 +193,7 @@ export default function PanduanPenulisanPanel() {
                   href={ref.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-accent2 hover:underline break-words"
+                  className="text-accent2 hover:underline wrap-break-word"
                 >
                   {ref.url}
                 </a>
