@@ -163,7 +163,7 @@ export default function PembagianTugasPanel() {
         <SectionTitle>Anggota</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <TaskCard
-            role="Imam"
+            role="Haidir"
             name="✍️ Kata Pengantar"
             badgeText="Pembuka"
             badgeVariant="muted"
@@ -230,34 +230,7 @@ export default function PembagianTugasPanel() {
         </div>
       </Section>
 
-      <Section>
-        <SectionTitle>Kolaborasi</SectionTitle>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-          <TaskCard
-            role="Azkaa · Reno · Azkiya"
-            name="📖 Daftar Pustaka"
-            badgeText="Kolaborasi"
-            badgeVariant="yellow"
-            items={[
-              "Kumpulkan semua referensi yang dipakai masing-masing",
-              "Format APA — minimal dari jurnal akademik & buku teks",
-              "Hindari blog, Wikipedia, atau sumber tidak terverifikasi",
-              "Pastikan setiap referensi muncul di isi makalah & sebaliknya",
-            ]}
-          />
-          <TaskCard
-            role="Imam · Rezaa"
-            name="🎤 Presenter Utama"
-            badgeText="Presentasi"
-            badgeVariant="green"
-            items={[
-              "Wajib baca & pelajari keseluruhan makalah sebelum hari H",
-              "Pahami flow argumentasi, bukan sekadar hafal isi",
-              "Seluruh anggota wajib siap mem-backup jika ada pertanyaan sulit",
-            ]}
-          />
-        </div>
-      </Section>
+
 
       <Section>
         <SectionTitle>Alur Koordinasi</SectionTitle>
@@ -295,7 +268,7 @@ export default function PembagianTugasPanel() {
           />
           <CoordCard
             step="04 · Paralel"
-            name="Imam"
+            name="Haidir"
             role="Kata Pengantar"
             desc="Tulis setelah isi makalah selesai agar konteks yang disampaikan akurat. Sertakan ucapan syukur, latar belakang singkat, dan harapan manfaat."
           />

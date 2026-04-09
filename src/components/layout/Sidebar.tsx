@@ -121,7 +121,7 @@ export function Sidebar({
         {(
           [
             {
-              href: "https://1drv.ms/w/c/23d53d2ba9c333ff/IQDbmR8lRCKaTaGiNEWfjXwMAZ_8kzGE0AhTazhxS8VlT2I?e=X91e5p",
+              href: "/go/makalah",
               label: "Microsoft Word",
               sub: "Pembuatan Makalah",
               tooltip: "Buka dokumen makalah di Microsoft Word Online",
@@ -175,7 +175,7 @@ export function Sidebar({
               ),
             },
             {
-              href: "https://canva.link/kelompok3sosbud",
+              href: "/go/ppt",
               label: "Canva",
               sub: "Slides Presentasi",
               tooltip: "Buka slides presentasi di Canva",

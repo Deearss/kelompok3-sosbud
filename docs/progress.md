@@ -9,6 +9,10 @@
 - Mengganti tautan dan branding "Google Slides" menjadi "Canva" pada `Sidebar` dan `PanduanPenulisanPanel`
 - Mengganti ikon standar dokumen pada menu Word menjadi replika vektor logo Microsoft Word yang lebih presisi dan modern
 - Memperbarui ikon folder Google Drive menjadi vektor logo original Google Drive yang otentik
+- Memperbarui link URL Canva untuk presentasi menjadi `https://canva.link/kelompok3sosbudd` via fitur redirect Next.js di `next.config.ts` untuk mempermudah sharing (lewat `/go/ppt` & `/go/makalah`).
+- Menambahkan rich preview Metadata (OpenGraph) pada `layout.tsx` menggunakan gambar slide presentasi terbaru.
+- Menghapus anggota bernama Imam dari daftar, menggabungkan tugas `Kata Pengantar` ke Haidir, dan menghapus section `Kolaborasi` yang tidak diperlukan lagi pada `PembagianTugasPanel`.
+- Menyinkronkan section `Kerangka Makalah` pada `PanduanPenulisanPanel` untuk mendetailkan isi BAB I, II, dan III sesuai dengan teks asli `(KELOMPOK 3) - PERAN ETIKA DAN NORMA...docx`.
 
 ## Sedang Berjalan (In Progress)
 - Minor UX & styling touch-ups sesuai masukan User.

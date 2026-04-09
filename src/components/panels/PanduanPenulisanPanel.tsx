@@ -84,36 +84,36 @@ export default function PanduanPenulisanPanel() {
       </Section>
 
       <Section>
-        <SectionTitle>Struktur Dokumen</SectionTitle>
-        <Card className="flex flex-wrap items-center gap-2">
-          <Badge variant="muted" className="mb-0! mr-0!">
-            1. Cover
-          </Badge>
-          <span className="text-muted text-sm">→</span>
-          <Badge variant="muted" className="mb-0! mr-0!">
-            2. Kata Pengantar
-          </Badge>
-          <span className="text-muted text-sm">→</span>
-          <Badge variant="muted" className="mb-0! mr-0!">
-            3. Daftar Isi
-          </Badge>
-          <span className="text-muted text-sm">→</span>
-          <Badge variant="yellow" className="mb-0! mr-0!">
-            4. BAB I
-          </Badge>
-          <span className="text-muted text-sm">→</span>
-          <Badge variant="yellow" className="mb-0! mr-0!">
-            5. BAB II
-          </Badge>
-          <span className="text-muted text-sm">→</span>
-          <Badge variant="yellow" className="mb-0! mr-0!">
-            6. BAB III
-          </Badge>
-          <span className="text-muted text-sm">→</span>
-          <Badge variant="green" className="mb-0! mr-0!">
-            7. Daftar Pustaka
-          </Badge>
-        </Card>
+        <SectionTitle>Kerangka Makalah</SectionTitle>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+          <Card className="flex flex-col gap-2 p-4">
+            <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB I · PENDAHULUAN</Badge>
+            <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
+              1.1 Latar Belakang<br/>
+              1.2 Rumusan Masalah<br/>
+              1.3 Tujuan Penulisan<br/>
+              1.4 Manfaat Penulisan
+            </div>
+          </Card>
+          
+          <Card className="flex flex-col gap-2 p-4">
+            <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB II · PEMBAHASAN</Badge>
+            <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
+              2.1 Pengertian Etika, Moral, Akhlak, dan Norma<br/>
+              2.2 Pertentangan Sosial dalam Masyarakat<br/>
+              2.3 Peran Etika dan Norma dalam Meredam Pertentangan Sosial (Integrasi)
+            </div>
+          </Card>
+
+          <Card className="flex flex-col gap-2 p-4">
+            <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB III · PENUTUP</Badge>
+            <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
+              3.1 Kesimpulan<br/>
+              3.2 Saran<br/>
+              <span className="text-accent2 mt-1 block font-semibold">Daftar Pustaka (Format APA)</span>
+            </div>
+          </Card>
+        </div>
       </Section>
 
       <Section>
@@ -121,7 +121,7 @@ export default function PanduanPenulisanPanel() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Tooltip content="Buka dokumen makalah Word Online" position="top">
             <a
-              href="https://1drv.ms/w/c/23d53d2ba9c333ff/IQDbmR8lRCKaTaGiNEWfjXwMAZ_8kzGE0AhTazhxS8VlT2I?e=X91e5p"
+              href="/go/makalah"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-blue-400/50 group"
@@ -190,7 +190,7 @@ export default function PanduanPenulisanPanel() {
 
           <Tooltip content="Buka presentasi di Canva" position="top">
             <a
-              href="https://canva.link/kelompok3sosbud"
+              href="/go/ppt"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00C4CC]/50 group"
