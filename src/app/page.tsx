@@ -5,9 +5,12 @@ import { Sidebar, type TabId } from "@/components/layout/Sidebar";
 import PembagianTugasPanel from "@/components/panels/PembagianTugasPanel";
 import PanduanPenulisanPanel from "@/components/panels/PanduanPenulisanPanel";
 import KerangkaMakalahPanel from "@/components/panels/KerangkaMakalahPanel";
+import { useAppStore } from "@/store/useAppStore";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<TabId>("tugas");
+  const activeTab = useAppStore((state) => state.activeTab);
+  const setActiveTab = useAppStore((state) => state.setActiveTab);
+  
   const [progressWidth, setProgressWidth] = useState(0);
   const [opacity, setOpacity] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
