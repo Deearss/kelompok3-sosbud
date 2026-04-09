@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "SOSBUD KELOMPOK 3",
     images: [
       {
-        url: "https://kelompok3-sosbud.netlify.app/images/kelompok3sosbud.png",
+        url: "https://kelompok3-sosbud.netlify.app/images/kelompok3sosbud.jpg",
         width: 1920,
         height: 1080,
         alt: "Cover Presentation Kelompok 3 SOSBUD",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kelompok 3 SOSBUD — Project Hub",
     description: "Dashboard koordinasi Kelompok 3 Sosbud - Integritas Masyarakat.",
-    images: ["https://kelompok3-sosbud.netlify.app/images/kelompok3sosbud.png"],
+    images: ["https://kelompok3-sosbud.netlify.app/images/kelompok3sosbud.jpg"],
   },
 };
 
