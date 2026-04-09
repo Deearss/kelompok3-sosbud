@@ -28,9 +28,9 @@ export function Sidebar({
   onClose,
 }: SidebarProps) {
   const navItems = [
-    { id: "tugas", label: "Pembagian Tugas", num: 5, icon: ClipboardList },
-    { id: "panduan", label: "Panduan Penulisan", num: 7, icon: Ruler },
-    { id: "kerangka", label: "Kerangka Makalah", num: 3, icon: FolderTree },
+    { id: "tugas", label: "Pembagian Tugas", icon: ClipboardList },
+    { id: "panduan", label: "Panduan Penulisan", icon: Ruler },
+    { id: "kerangka", label: "Kerangka Makalah", icon: FolderTree },
   ] as const;
 
   return (
@@ -95,18 +95,6 @@ export function Sidebar({
                 <IconComponent size={15} strokeWidth={2.5} />
               </div>
               {item.label}
-              <span
-                className={cn(
-                  "relative font-inter text-[0.6rem] size-5 rounded-full flex justify-center items-center ml-auto",
-                  isActive
-                    ? "bg-accent/20 text-accent"
-                    : "bg-border text-muted",
-                )}
-              >
-                <span className="absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  {item.num}
-                </span>
-              </span>
             </div>
           );
         })}

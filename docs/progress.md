@@ -15,6 +15,8 @@
 - Menyinkronkan section `Kerangka Makalah` pada `PanduanPenulisanPanel` untuk mendetailkan isi BAB I, II, dan III sesuai dengan teks asli `(KELOMPOK 3) - PERAN ETIKA DAN NORMA...docx`.
 - Ekstraksi Daftar Pustaka menjadi array konstan untuk mapping antarmuka dan mengganti gaya penulisan ke APA 6 Style.
 - Mengatur *state management* dengan Zustand dan persist middleware untuk mempertahankan riwayat status menu navigasi aktif di *Sidebar* dan riwayat *Checklist Panel Final* pada *PanduanPenulisanPanel*.
+- Menyamaratakan struktur section `PembagianTugasPanel` dengan menghapus prop gimmick `isLeader` dan unit `Koordinator`.
+- Menghapus elemen angka statis yang tidak ada penugasan fungsional dari tab navigasi *Sidebar*.
 
 ## Sedang Berjalan (In Progress)
 - Minor UX & styling touch-ups sesuai masukan User.

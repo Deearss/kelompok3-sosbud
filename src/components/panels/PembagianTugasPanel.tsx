@@ -141,37 +141,19 @@ export default function PembagianTugasPanel() {
       />
 
       <Section>
-        <SectionTitle>Koordinator</SectionTitle>
-        <TaskCard
-          isLeader
-          role="Ketua Kelompok"
-          name="🏛️ Haidir — BAB I & Review Final"
-          badgeText="Leads"
-          badgeVariant="green"
-          items={[
-            "1.1 Latar Belakang (buka dengan data/fakta nyata pertentangan sosial di Indonesia)",
-            "1.2 Rumusan Masalah (kontrak seluruh makalah — selesaikan lebih awal)",
-            "1.3 Tujuan Penulisan",
-            "1.4 Manfaat Penulisan",
-            "Rapiin Daftar Isi",
-            "Review & quality check semua bagian, pastikan konsistensi argumen",
-          ]}
-        />
-      </Section>
-
-      <Section>
-        <SectionTitle>Anggota</SectionTitle>
+        <SectionTitle>Anggota Tim</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <TaskCard
             role="Haidir"
-            name="✍️ Kata Pengantar"
-            badgeText="Pembuka"
-            badgeVariant="muted"
+            name="🏛️ BAB I, Kata Pengantar & Review Final"
+            badgeText="BAB I"
+            badgeVariant="green"
             items={[
-              "Ucapan syukur",
-              "Latar belakang singkat kenapa topik ini dipilih",
-              "Ucapan terima kasih ke dosen & anggota kelompok",
-              "Harapan atas manfaat makalah",
+              "1.1 Latar Belakang (data/fakta nyata pertentangan sosial di Indonesia)",
+              "1.2 Rumusan Masalah (kontrak seluruh makalah)",
+              "1.3 Tujuan & Manfaat Penulisan",
+              "Kata Pengantar",
+              "Review & quality check semua bagian"
             ]}
           />
           <TaskCard
