@@ -242,7 +242,7 @@ export default function PanduanPenulisanPanel() {
             position="top"
           >
             <a
-              href="https://drive.google.com/drive/u/1/folders/1bw-PLHiOR_fS-qzUczeqxmtR_4-vMiC9"
+              href="/go/drive"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-3.5 p-4 rounded-xl border border-border bg-surface no-underline text-textColor transition-all duration-200 hover:-translate-y-1 hover:bg-[#1a1e2d] hover:border-[#00ac47]/50 group"
