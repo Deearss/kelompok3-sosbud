@@ -118,11 +118,14 @@ export default function PanduanPenulisanPanel() {
             <Badge variant="yellow" className="self-start mb-0! mr-0!">BAB III · PENUTUP</Badge>
             <div className="text-[0.8rem] text-textDim mt-1 leading-relaxed">
               3.1 Kesimpulan<br/>
-              3.2 Saran<br/>
-              <span className="text-accent2 mt-3 block font-semibold border-t border-border pt-2">DAFTAR PUSTAKA</span>
+              3.2 Saran
             </div>
           </Card>
         </div>
+        
+        <Card className="mt-3.5 flex items-center justify-center p-4">
+          <span className="text-accent2 font-bold tracking-widest text-[0.85rem]">DAFTAR PUSTAKA</span>
+        </Card>
       </Section>
 
       <Section>

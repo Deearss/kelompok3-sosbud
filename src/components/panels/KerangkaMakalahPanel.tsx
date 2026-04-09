@@ -186,6 +186,8 @@ export default function KerangkaMakalahPanel() {
               <strong>3.2 Saran</strong>
             </OutlineSub>
           </OutlineNode>
+          
+          <OutlineNode title="DAFTAR PUSTAKA" />
         </ul>
       </Section>
     </div>
