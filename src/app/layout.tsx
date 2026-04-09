@@ -15,6 +15,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kelompok3-sosbud.netlify.app"),
   title: "Kelompok 3 SOSBUD — Project Hub",
   description: "Dashboard koordinasi tugas kelompok 3 Sosbud - Peran Etika dan Norma. Hubungan Sosial, Integrasi Masyarakat, dan Resolusi Konflik.",
   openGraph: {
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "SOSBUD KELOMPOK 3",
     images: [
       {
-        url: "/images/kelompok3sosbud.png",
+        url: "https://kelompok3-sosbud.netlify.app/images/kelompok3sosbud.png",
         width: 1920,
         height: 1080,
         alt: "Cover Presentation Kelompok 3 SOSBUD",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kelompok 3 SOSBUD — Project Hub",
     description: "Dashboard koordinasi Kelompok 3 Sosbud - Integritas Masyarakat.",
-    images: ["/images/kelompok3sosbud.png"],
+    images: ["https://kelompok3-sosbud.netlify.app/images/kelompok3sosbud.png"],
   },
 };
 
