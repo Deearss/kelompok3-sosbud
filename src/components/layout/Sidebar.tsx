@@ -265,13 +265,13 @@ export function Sidebar({
       <div className="font-inter text-[0.667rem] text-muted border-t border-border pt-5 leading-[1.8]">
         <strong className="text-accent2">Judul Makalah</strong>
         <br />
-        Peran Etika &amp; Norma dalam
+        PERAN ETIKA, MORAL, AKHLAK DAN NORMA
         <br />
-        Meredam Pertentangan Sosial
+        DALAM MEREDAM PERTENTANGAN SOSIAL
         <br />
-        sebagai Upaya Integrasi
+        SEBAGAI UPAYA INTEGRASI
         <br />
-        Masyarakat
+        MASYARAKAT
       </div>
     </aside>
   );

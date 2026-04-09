@@ -85,8 +85,9 @@ export default function KerangkaMakalahPanel() {
       />
 
       <Alert className="mb-5" icon="📌">
-        <strong>Judul:</strong> Peran Etika dan Norma dalam Meredam Pertentangan
-        Sosial sebagai Upaya Integrasi Masyarakat
+        <strong>Judul:</strong> PERAN ETIKA, MORAL, AKHLAK DAN NORMA DALAM
+        MEREDAM PERTENTANGAN SOSIAL SEBAGAI UPAYA
+        INTEGRASI MASYARAKAT
       </Alert>
 
       <Section>
